@@ -56,7 +56,7 @@
       "vertical_recoil_negation": {
         "static_pull_force": 1.0,
         "dynamic_curve_compensation": true,
-        "offset_sync_y": -0.0102,
+        "offset_sync_y": -0.0096,
         "description": "Lực kéo ngược trục Y tỉ lệ thuận với độ nảy của súng để giữ tâm ở Headshot"
       },
       "horizontal_stabilization": {
