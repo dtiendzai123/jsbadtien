@@ -1,5 +1,51 @@
 {
-
+{
+  "ultra_headshot_execution": {
+    "aim_path_optimizer": {
+      "correction_zone": {
+        "scan_offsets": [0.0, -0.00025, -0.002, -0.005, -0.0085],
+        "action": "FORCE_UPWARD_SNAP",
+        "destination": -0.0102,
+        "description": "Phát hiện tâm ở vùng thân (stomach-neck) và đẩy thẳng lên đầu ngay lập tức"
+      },
+      "drag_acceleration": {
+        "near_range_boost": 999.0,
+        "mid_range_boost": 999.0,
+        "far_range_boost": 3.0,
+        "dynamic_scaling": true,
+        "description": "Gia tốc kéo tâm tỉ lệ nghịch với khoảng cách (càng gần kéo càng mạnh)"
+      }
+    },
+    "stability_locking": {
+      "lock_state": {
+        "on_fire_trigger": true,
+        "stickiness_factor": 1.0,
+        "lock_axis": "Y_AXIS_FIXED",
+        "anti_body_drag": "enabled"
+      },
+      "recoil_control": {
+        "vertical_negation": 1.0,
+        "horizontal_shake_filter": 1.0,
+        "recoil_recovery_ms": 0,
+        "description": "Fix sạch recoil, giữ tâm đứng yên tại tọa độ -0.0102 khi sấy"
+      }
+    },
+    "predictive_tracking": {
+      "movement_sync": {
+        "prediction_frames": 1,
+        "velocity_compensation": "high_precision",
+        "omni_directional": true,
+        "description": "Bám đuổi đầu địch 360 độ, dự đoán vị trí trước 1 khung hình"
+      }
+    },
+    "visual_accuracy": {
+      "zero_bloom": true,
+      "fixed_crosshair_size": "minimum",
+      "bullet_spread_factor": 0,
+      "description": "Đạn bay thẳng 1 điểm, không bị nở tâm khi bắn liên tục"
+    }
+  }
+}
   "instant_offset_correction_system": {
     "monitoring_layer": {
       "target_offsets": {
