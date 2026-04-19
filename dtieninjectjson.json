@@ -9,8 +9,8 @@
         "description": "Phát hiện tâm ở vùng thân (stomach-neck) và đẩy thẳng lên đầu ngay lập tức"
       },
       "drag_acceleration": {
-        "near_range_boost": 999.0,
-        "mid_range_boost": 999.0,
+        "near_range_boost": 9999.0,
+        "mid_range_boost": 9999.0,
         "far_range_boost": 3.0,
         "dynamic_scaling": true,
         "description": "Gia tốc kéo tâm tỉ lệ nghịch với khoảng cách (càng gần kéo càng mạnh)"
