@@ -1,5 +1,78 @@
 {
 
+  "ultra_precision_aim_system": {
+    "module_1_zero_gravity_physics": {
+      "gravity_nullifier": {
+        "axis_y_weight": 0.0000,
+        "axis_x_resistance": 0.0000,
+        "drag_friction_value": 0,
+        "air_resistance_simulation": false
+      },
+      "inertia_controller": {
+        "velocity_cutoff_threshold": 0.0,
+        "stop_momentum_ms": 0,
+        "input_smoothing_bypass": true,
+        "description": "Loại bỏ hoàn toàn độ trễ và đà trôi của tâm khi dừng tay"
+      }
+    },
+    "module_2_hyper_lock_0001s": {
+      "lock_on_logic": {
+        "detection_radius_fov": 3.5,
+        "scan_rate_per_frame": 120,
+        "lock_speed_constant": 0.001,
+        "priority_node": "bone_index_06_head_top"
+      },
+      "anti_chest_repulsion": {
+        "body_hitbox_ignore_zone": [ "stomach", "chest", "neck" ],
+        "repulsion_force_multiplier": 2.5,
+        "description": "Tạo lực đẩy khi tâm đi qua vùng ngực để ép tâm bay thẳng lên đầu"
+      }
+    },
+    "module_3_perfect_drag_headshot": {
+      "micro_drag_magnifier": {
+        "min_input_detect": 0.0001,
+        "output_scale_up": 10.0,
+        "upward_auto_correction": true
+      },
+      "sticky_head_retention": {
+        "stickiness_intensity": 1.0,
+        "break_lock_on_kill": true,
+        "anti_recoil_y_stabilizer": 100,
+        "description": "Ghim chặt tâm vào đỉnh đầu, không cho phép tụt xuống dù súng giật mạnh"
+      }
+    },
+    "module_4_predictive_analysis": {
+      "frame_prediction_engine": {
+        "look_ahead_frames": 1,
+        "interpolation_method": "hermite_spline",
+        "movement_vector_sync": "high_fidelity",
+        "ping_compensation_ms": 15.5
+      },
+      "direction_shift_handler": {
+        "re_lock_delay": 0,
+        "velocity_recalculation_rate": "instant",
+        "description": "Dự đoán và bám đuổi quỹ đạo đầu địch khi chúng nhảy hoặc lạng lách"
+      }
+    },
+    "module_5_bullet_path_optimizer": {
+      "spread_control": {
+        "max_bullet_deviation": 0.0,
+        "crosshair_bloom_lock": "minimum",
+        "perfect_accuracy_status": true
+      },
+      "recoil_elimination": {
+        "vertical_kick_null": 1.0,
+        "horizontal_kick_null": 1.0,
+        "shaking_filter": "ultra_clean"
+      }
+    }
+  },
+  "metadata": {
+    "engine_type": "Null-Gravity-V3",
+    "compatibility": "Global_FF_Standard",
+    "security_warning": "High_Risk_Detectable"
+  }
+
   "zero_gravity_engine": {
     "physics_override": {
       "mass_scaling": 0.0,
