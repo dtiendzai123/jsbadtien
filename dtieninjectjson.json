@@ -1,5 +1,34 @@
 {
 
+  "absolute_precision_engine": {
+    "aim_positioning": {
+      "lock_coordinate": "vertex_head_top",
+      "pixel_perfect_alignment": true,
+      "snap_force_percentage": 100,
+      "dynamic_hitbox_expansion": 1.15,
+      "description": "Định vị chính xác đỉnh đầu, mở rộng nhẹ hitbox để tránh hụt"
+    },
+    "error_nullification": {
+      "zero_jitter_filter": active,
+      "recoil_compensation_x": 0.0,
+      "recoil_compensation_y": 0.0,
+      "spread_narrowing_factor": 0,
+      "description": "Triệt tiêu hoàn toàn độ rung và độ nở của tâm khi bắn"
+    },
+    "tracking_algorithm": {
+      "frame_by_frame_locking": true,
+      "sub_pixel_movement": 0.00001,
+      "velocity_sync": "real-time",
+      "miss_prevention_logic": "hard_stick",
+      "description": "Đồng bộ hóa tốc độ di chuyển của tâm với đầu địch theo thời gian thực"
+    },
+    "trigger_response": {
+      "auto_drag_acceleration": "maximum",
+      "stabilization_delay": 0,
+      "post_lock_behavior": "freeze_on_target"
+    }
+  }
+
   "advanced_aimbot_core": {
     "execution_speed": {
       "lock_time_ms": 0.001,
