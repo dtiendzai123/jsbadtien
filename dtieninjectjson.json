@@ -4,7 +4,7 @@
     "distance_sensor": {
       "measurement_unit": "meters",
       "detection_range": [1, 9999],
-      "scan_interval_ms": 1,
+      "scan_interval_ms": 0,
       "description": "Quét khoảng cách kẻ địch liên tục trong thời gian thực"
     },
     "dynamic_force_multiplier": {
@@ -32,7 +32,7 @@
       ]
     },
     "auto_drag_mechanics": {
-      "target_anchor_y": -0.0102,
+      "target_anchor_y": -0.0096,
       "bypass_intermediate_offsets": true,
       "acceleration_type": "instant_exponential",
       "auto_compensation_recoil": "100%",
@@ -114,7 +114,7 @@
       "omni_directional_tracking": {
         "horizontal_tracking_x": "auto_sync",
         "vertical_tracking_y": "offset_locked",
-        "lock_coordinate_y": -0.0102,
+        "lock_coordinate_y": -0.0096,
         "compensation_rate": 1.0,
         "description": "Khoá cứng trục Y tại đầu và tự động đuổi theo trục X theo mục tiêu"
       },
@@ -156,7 +156,7 @@
       "origin_point": "STOMACH",
       "destination_point": "HEAD",
       "offset_values": {
-        "head": -0.0102,
+        "head": -0.0096,
         "neck": -0.0085,
         "upper": -0.005,
         "chest": -0.002,
