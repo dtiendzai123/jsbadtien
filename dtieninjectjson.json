@@ -1,5 +1,47 @@
 {
 
+  "offset_acceleration_engine": {
+    "target_mapping": {
+      "origin_point": "STOMACH",
+      "destination_point": "HEAD",
+      "offset_values": {
+        "head": -0.0102,
+        "neck": -0.0085,
+        "upper": -0.005,
+        "chest": -0.002,
+        "spine": -0.00025,
+        "stomach": 0.0
+      }
+    },
+    "dynamic_drag_logic": {
+      "acceleration_on_body_offsets": {
+        "status": "ultra_fast",
+        "boost_multiplier": 8.5,
+        "non_stop_zones": [0.0, -0.00025, -0.002, -0.005, -0.0085],
+        "description": "Tăng tốc độ trôi gấp 8.5 lần khi tâm nằm trong dải tọa độ từ Stomach đến Neck"
+      },
+      "gravity_resistance_bypass": {
+        "bypass_value": "total",
+        "friction_at_offsets": 0.0,
+        "zero_clamping": true,
+        "description": "Loại bỏ hoàn toàn lực cản tại các điểm offset trung gian"
+      }
+    },
+    "head_lock_precision": {
+      "snap_threshold": -0.0102,
+      "lock_retention_force": 1.0,
+      "precision_alignment": "vertex_only",
+      "stop_instant_at_target": true,
+      "description": "Dừng khẩn cấp và khóa cứng tại tọa độ -0.0102 (HEAD)"
+    },
+    "frame_interpolation": {
+      "frame_skip_on_body": true,
+      "interpolation_curve": "exponential_in",
+      "prediction_sync": "0.0001s",
+      "description": "Sử dụng đường cong lũy thừa để đẩy tốc độ lên cực đại khi vừa chạm Spine"
+    }
+  }
+
   "ultra_precision_aim_system": {
     "module_1_zero_gravity_physics": {
       "gravity_nullifier": {
