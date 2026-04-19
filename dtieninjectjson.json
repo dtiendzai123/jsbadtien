@@ -25,7 +25,7 @@
     "bypass_mechanics": {
       "ignore_friction_at_chest": true,
       "anti_sticky_body": true,
-      "repulsion_velocity": 50.0,
+      "repulsion_velocity": 100.0,
       "description": "Triệt tiêu lực dính mặc định của game tại vùng ngực"
     },
     "stabilization_after_jump": {
