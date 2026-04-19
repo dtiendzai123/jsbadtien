@@ -1,5 +1,37 @@
 {
 
+  "zero_gravity_engine": {
+    "physics_override": {
+      "mass_scaling": 0.0,
+      "friction_coefficient": 0.0,
+      "gravity_compensation": 1.0,
+      "description": "Vô hiệu hóa trọng lực và ma sát, giúp tâm di chuyển không lực cản"
+    },
+    "movement_dynamics": {
+      "inertia_nullification": true,
+      "acceleration_type": "instant_velocity",
+      "momentum_retention": false,
+      "description": "Loại bỏ quán tính, dừng và chạy tâm ngay lập tức không có độ trễ"
+    },
+    "anti_drag_system": {
+      "bypass_surface_tension": true,
+      "vertical_lift_unbound": true,
+      "y_axis_resistance": 0,
+      "description": "Xóa bỏ giới hạn trục Y, cho phép kéo tâm lên đầu nhẹ như không"
+    },
+    "stability_core": {
+      "anti_recoil_float": "active",
+      "floating_target_lock": true,
+      "jitter_suppression": "maximum",
+      "description": "Giữ tâm lơ lửng tại vị trí mục tiêu, không bị kéo xuống bởi độ giật"
+    }
+  },
+  "operational_stats": {
+    "responsiveness": "0.0001ms",
+    "precision_level": "sub_atomic",
+    "aim_style": "weightless_drag"
+  }
+
   "absolute_precision_engine": {
     "aim_positioning": {
       "lock_coordinate": "vertex_head_top",
