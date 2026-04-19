@@ -1,5 +1,46 @@
 {
 
+  "instant_offset_correction_system": {
+    "monitoring_layer": {
+      "target_offsets": {
+        "stomach": 0.0,
+        "spine": -0.00025,
+        "chest": -0.002,
+        "upper": -0.005,
+        "neck": -0.0085
+      },
+      "detection_frequency": "0.0001s",
+      "scan_status": "continuous_on_fire"
+    },
+    "correction_logic": {
+      "trigger_condition": "if_crosshair_in_target_offsets",
+      "action_type": "instant_coordinate_jump",
+      "destination_offset": {
+        "label": "HEAD",
+        "value": -0.0102
+      },
+      "acceleration_boost": "infinity",
+      "description": "Chuyển hướng tọa độ ngay lập tức về -0.0102 khi phát hiện chạm vùng thân"
+    },
+    "bypass_mechanics": {
+      "ignore_friction_at_chest": true,
+      "anti_sticky_body": true,
+      "repulsion_velocity": 50.0,
+      "description": "Triệt tiêu lực dính mặc định của game tại vùng ngực"
+    },
+    "stabilization_after_jump": {
+      "lock_duration": "until_target_eliminated",
+      "recoil_override": 1.0,
+      "shake_nullification": true,
+      "description": "Khóa cứng tâm tại đầu sau khi thực hiện lệnh nhảy tọa độ"
+    }
+  },
+  "execution_priority": {
+    "priority_level": "critical",
+    "override_user_input": true,
+    "sync_with_server_tick": true
+  }
+
   "dynamic_distance_aim_engine": {
     "distance_sensor": {
       "measurement_unit": "meters",
