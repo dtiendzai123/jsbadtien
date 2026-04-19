@@ -1,5 +1,56 @@
 {
 
+  "dynamic_distance_aim_engine": {
+    "distance_sensor": {
+      "measurement_unit": "meters",
+      "detection_range": [1, 500],
+      "scan_interval_ms": 1,
+      "description": "Quét khoảng cách kẻ địch liên tục trong thời gian thực"
+    },
+    "dynamic_force_multiplier": {
+      "logic": "inverse_proportional",
+      "formula_base": "Force = (Max_Power / Current_Distance) * Sensitivity",
+      "distance_scaling_factors": [
+        {
+          "range": "0m - 5m",
+          "drag_intensity": 10.0,
+          "speed_ms": 0.001,
+          "description": "Cận chiến: Lực kéo cực đại để phá vỡ ghim thân"
+        },
+        {
+          "range": "6m - 20m",
+          "drag_intensity": 5.5,
+          "speed_ms": 0.005,
+          "description": "Tầm trung: Lực kéo mạnh vừa phải, ổn định"
+        },
+        {
+          "range": "21m - 100m+",
+          "drag_intensity": 2.1,
+          "speed_ms": 0.015,
+          "description": "Tầm xa: Lực kéo nhẹ, ưu tiên độ chính xác tuyệt đối"
+        }
+      ]
+    },
+    "auto_drag_mechanics": {
+      "target_anchor_y": -0.0102,
+      "bypass_intermediate_offsets": true,
+      "acceleration_type": "instant_exponential",
+      "auto_compensation_recoil": "100%",
+      "description": "Tự động đẩy tâm từ mọi vị trí lên Head Offset (-0.0102)"
+    },
+    "lock_state_controller": {
+      "activation": "on_fire_hold",
+      "stickiness_at_head": 1.0,
+      "lock_break_on_distance_change": false,
+      "smooth_transition_between_ranges": true
+    }
+  },
+  "safety_and_precision": {
+    "anti_overdrag_filter": true,
+    "pixel_perfect_locking": "enabled",
+    "frame_interpolation": "high_fidelity"
+  }
+
   "anti_recoil_system_v4": 
     "core_stabilizer": {
       "vertical_recoil_negation": {
