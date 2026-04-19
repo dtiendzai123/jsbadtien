@@ -34,6 +34,40 @@
   "fpsBoost": 120,
   "touchBoost": 5.0,
 
+  "combat_settings": {
+    "aim_assist": {
+      "micro_drag_optimization": {
+        "description": "Kéo trôi tâm lên đầu khi lực kéo (drag) cực nhỏ",
+        "enabled": true,
+        "input_threshold": 0.05,
+        "snap_target": "head",
+        "upward_force_multiplier": 1.25,
+        "interpolation_type": "ease-out"
+      },
+      "lock_stability": {
+        "description": "Không tụt tâm xuống thân sau khi đã khóa mục tiêu",
+        "lock_axis": "y-axis",
+        "prevent_recoil_drop": true,
+        "sticky_aim_strength": 0.95,
+        "min_retention_height": "neck_level"
+      },
+      "instant_lock_on_touch": {
+        "description": "Tự động khóa mục tiêu ngay khi tâm chạm vào kẻ địch",
+        "activation_trigger": "on_hover",
+        "lock_speed_ms": 0,
+        "fov_radius": 2.5,
+        "target_priority": "closest_to_crosshair"
+      },
+      "directional_prediction": {
+        "description": "Dự đoán vị trí trước 1 frame khi mục tiêu đổi hướng",
+        "prediction_buffer_frames": 1,
+        "velocity_compensation": true,
+        "direction_shift_detection": "high_precision",
+        "latency_correction_ms": 16.7
+      }
+    }
+  }
+
   "kalman": {
     "enabled": true,
     "q": 0.001,
