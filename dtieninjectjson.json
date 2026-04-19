@@ -3,21 +3,21 @@
   "mode": "RAGE",
   "sensitivity": 3.2,
 
-  "snapSpeed": 0.985,
-  "lockStrength": 0.995,
+  "snapSpeed": 1.0,
+  "lockStrength": 1.995,
   "headPriority": 1.0,
 
   "headOffsetY": -3.2,
   "neckBypass": true,
 
   "prediction": 0.18,
-  "antiSwitchDirection": 0.92,
+  "antiSwitchDirection": 1.92,
 
-  "dragBoost": 1.8,
-  "microAdjust": 0.35,
+  "dragBoost": 12.8,
+  "microAdjust": 0.001,
 
   "noRecoil": 1.0,
-  "recoilControl": 0.92,
+  "recoilControl": 1.0,
 
   "autoFire": true,
   "fireOnlyWhenLocked": true,
@@ -28,11 +28,11 @@
   "lockAfterSnap": true,
   "antiBodyPullBack": true,
 
-  "maxFov": 120,
-  "minDistanceBoost": 1.4,
+  "maxFov": 360,
+  "minDistanceBoost": 0.001,
 
   "fpsBoost": 120,
-  "touchBoost": 2.0,
+  "touchBoost": 5.0,
 
   "kalman": {
     "enabled": true,
