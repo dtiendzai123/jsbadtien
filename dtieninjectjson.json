@@ -32,7 +32,7 @@
       ]
     },
     "auto_drag_mechanics": {
-      "target_anchor_y": -0.0096,
+      "target_anchor_y": -0.014,
       "bypass_intermediate_offsets": true,
       "acceleration_type": "instant_exponential",
       "auto_compensation_recoil": "100%",
@@ -56,7 +56,7 @@
       "vertical_recoil_negation": {
         "static_pull_force": 1.0,
         "dynamic_curve_compensation": true,
-        "offset_sync_y": -0.0096,
+        "offset_sync_y": -0.014,
         "description": "Lực kéo ngược trục Y tỉ lệ thuận với độ nảy của súng để giữ tâm ở Headshot"
       },
       "horizontal_stabilization": {
@@ -114,7 +114,7 @@
       "omni_directional_tracking": {
         "horizontal_tracking_x": "auto_sync",
         "vertical_tracking_y": "offset_locked",
-        "lock_coordinate_y": -0.0096,
+        "lock_coordinate_y": -0.014,
         "compensation_rate": 1.0,
         "description": "Khoá cứng trục Y tại đầu và tự động đuổi theo trục X theo mục tiêu"
       },
@@ -156,7 +156,7 @@
       "origin_point": "STOMACH",
       "destination_point": "HEAD",
       "offset_values": {
-        "head": -0.0096,
+        "head": -0.014,
         "neck": -0.0085,
         "upper": -0.005,
         "chest": -0.002,
