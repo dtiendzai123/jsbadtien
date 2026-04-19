@@ -9,7 +9,7 @@
       "description": "Định vị chính xác đỉnh đầu, mở rộng nhẹ hitbox để tránh hụt"
     },
     "error_nullification": {
-      "zero_jitter_filter": active,
+      "zero_jitter_filter": "active",
       "recoil_compensation_x": 0.0,
       "recoil_compensation_y": 0.0,
       "spread_narrowing_factor": 0,
