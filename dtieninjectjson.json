@@ -67,7 +67,43 @@
       }
     }
   }
-
+"aim_optimization_config": {
+    "version": "2.0.4",
+    "target_lock_system": {
+      "auto_lock_on_contact": {
+        "status": "active",
+        "activation_delay": 0,
+        "trigger_mode": "touch_instant",
+        "description": "Auto bắt đầu lock ngay khi chạm enemy"
+      },
+      "stability_control": {
+        "prevent_body_drop": true,
+        "lock_position": "head_center",
+        "stickiness_factor": 1.0,
+        "description": "Không tụt xuống thân sau khi lock"
+      }
+    },
+    "drag_assist_mechanics": {
+      "micro_drag_logic": {
+        "input_threshold": 0.002,
+        "upward_acceleration": 2.5,
+        "snap_to_head_on_low_force": true,
+        "description": "Kéo trôi lên đầu khi drag cực nhỏ"
+      },
+      "frame_prediction": {
+        "predict_ahead": 1,
+        "interpolation": "linear_smooth",
+        "direction_change_compensation": true,
+        "description": "Predict trước 1 frame khi đổi hướng"
+      }
+    },
+    "global_sensitivity_override": {
+      "general": 300,
+      "red_dot": 0,
+      "headshot_multiplier": 2.85,
+      "aim_assist_force": 2.95
+    }
+  }
   "kalman": {
     "enabled": true,
     "q": 0.001,
