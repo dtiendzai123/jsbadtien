@@ -70,7 +70,7 @@
   "lockStrength": 1.995,
   "headPriority": 1.0,
 
-  "headOffsetY": -0.01,
+  "headOffsetY": -0.014,
   "neckBypass": true,
 
   "prediction": 0.18,
