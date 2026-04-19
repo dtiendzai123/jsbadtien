@@ -35,7 +35,7 @@
 
   "aimbot": true,
   "mode": "RAGE",
-  "sensitivity": 3.2,
+  "sensitivity": 5.2,
 
   "snapSpeed": 1.0,
   "lockStrength": 1.995,
