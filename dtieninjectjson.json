@@ -1,5 +1,56 @@
 {
 
+  "anti_recoil_system_v4": 
+    "core_stabilizer": {
+      "vertical_recoil_negation": {
+        "static_pull_force": 1.0,
+        "dynamic_curve_compensation": true,
+        "offset_sync_y": -0.0102,
+        "description": "Lực kéo ngược trục Y tỉ lệ thuận với độ nảy của súng để giữ tâm ở Headshot"
+      },
+      "horizontal_stabilization": {
+        "jitter_reduction_filter": 100,
+        "left_right_sway_nullifier": 0,
+        "shake_absorption_rate": "maximum",
+        "description": "Triệt tiêu hoàn toàn hiện tượng tâm bị rung lắc sang hai bên"
+      }
+    },
+    "smart_recoil_logic": {
+      "initial_kick_bypass": {
+        "first_shot_stabilizer": true,
+        "instant_recovery_ms": 0,
+        "description": "Vô hiệu hóa độ nảy mạnh của viên đạn đầu tiên"
+      },
+      "progressive_spray_control": {
+        "pattern_recognition": "active",
+        "auto_pull_increment": 0.0015,
+        "max_clamping_force": 1.0,
+        "description": "Tự động tăng lực ghìm tâm khi sấy đạn liên tục"
+      }
+    },
+    "bullet_physics_override": {
+      "spread_narrowing": {
+        "bloom_radius": 0.0,
+        "fixed_point_accuracy": true,
+        "no_spread_status": "enabled"
+      },
+      "gravity_bullet_drop": {
+        "drop_coefficient": 0.0,
+        "travel_speed": "instant"
+      }
+    },
+    "input_synchronization": {
+      "fire_button_link": "ON_HOLD",
+      "stop_stabilization_on_release": true,
+      "polling_rate": "1000Hz"
+    }
+  },
+  "visual_smoothing": {
+    "camera_shake_removal": true,
+    "muzzle_flash_dimming": 0.8,
+    "ads_stabilizer_zoom": 1.0
+  }
+
   "active_combat_kernel": {
     "input_trigger_monitor": {
       "detection_source": "screen_touch_event",
