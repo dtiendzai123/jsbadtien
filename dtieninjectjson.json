@@ -1,4 +1,38 @@
 {
+
+  "advanced_aimbot_core": {
+    "execution_speed": {
+      "lock_time_ms": 0.001,
+      "polling_rate_hz": 1000,
+      "description": "Tốc độ phản hồi cực cao, gần như tức thời"
+    },
+    "vertical_drag_optimizer": {
+      "bypass_chest_assist": true,
+      "neck_ignore_logic": "force_skip",
+      "upward_boost_coefficient": 5.0,
+      "micro_movement_sensitivity": 0.0001,
+      "description": "Bỏ qua vùng ngực/cổ, ép tâm đẩy thẳng lên cao"
+    },
+    "locking_mechanism": {
+      "target_anchor": "top_head",
+      "stickiness_at_target": 1.0,
+      "anti_recoil_drop": true,
+      "friction_compensation": 0.0,
+      "description": "Khóa cứng đỉnh đầu, loại bỏ hoàn toàn lực kéo xuống"
+    },
+    "frame_analysis": {
+      "prediction_buffer": "1_frame_ahead",
+      "velocity_tracking": "high_precision",
+      "recalibration_on_direction_change": 0,
+      "description": "Dự đoán vị trí đầu trước 1 frame khi địch di chuyển"
+    }
+  },
+  "visual_override": {
+    "crosshair_behavior": "snap_to_target",
+    "fov_shape": "circular",
+    "fov_radius_px": 50
+  }
+
   "aimbot": true,
   "mode": "RAGE",
   "sensitivity": 3.2,
