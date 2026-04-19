@@ -1,5 +1,44 @@
 {
-{
+  }
+
+  "precision_clamping_system": {
+    "limit_controller": {
+      "max_vertical_offset": -0.0102,
+      "min_vertical_offset": -0.0102,
+      "clamp_at_target": true,
+      "description": "Khóa cứng trục Y tại điểm -0.0102, không cho phép vượt quá dù kéo mạnh"
+    },
+    "dynamic_friction_logic": {
+      "magnetic_zone_radius": "0.0005",
+      "friction_multiplier_at_head": 100.0,
+      "instant_velocity_kill": true,
+      "description": "Tạo lực ma sát cực đại ngay tại đỉnh đầu để triệt tiêu đà kéo nhanh"
+    },
+    "input_buffer_optimization": {
+      "over_drag_protection": "active",
+      "sensitivity_scaling": {
+        "on_body": 1.0,
+        "on_head_contact": 0.001
+      },
+      "description": "Tự động hạ độ nhạy xuống mức tối thiểu ngay khi tâm chạm vào đầu"
+    },
+    "anti_overshoot_mechanics": {
+      "acceleration_cut_off": -0.0100,
+      "deceleration_rate": "instant",
+      "force_alignment_to_vertex": true,
+      "description": "Ngắt gia tốc ngay lập tức khi tiệm cận tọa độ mục tiêu"
+    },
+    "recoil_stabilization": {
+      "vertical_lock_strength": 1.0,
+      "rebound_prevention": true,
+      "description": "Chống nảy tâm và chống rung khi đang khóa mục tiêu"
+    }
+  },
+  "metadata": {
+    "mode": "Zero-Overshoot",
+    "priority": "Hardware_Acceleration",
+    "status": "Perfect_Lock_Active"
+  }
   "ultra_headshot_execution": {
     "aim_path_optimizer": {
       "correction_zone": {
@@ -44,8 +83,8 @@
       "bullet_spread_factor": 0,
       "description": "Đạn bay thẳng 1 điểm, không bị nở tâm khi bắn liên tục"
     }
-  }
-}
+
+
   "instant_offset_correction_system": {
     "monitoring_layer": {
       "target_offsets": {
