@@ -3,7 +3,7 @@
   "dynamic_distance_aim_engine": {
     "distance_sensor": {
       "measurement_unit": "meters",
-      "detection_range": [1, 500],
+      "detection_range": [1, 9999],
       "scan_interval_ms": 1,
       "description": "Quét khoảng cách kẻ địch liên tục trong thời gian thực"
     },
@@ -13,20 +13,20 @@
       "distance_scaling_factors": [
         {
           "range": "0m - 5m",
-          "drag_intensity": 10.0,
+          "drag_intensity": 100.0,
           "speed_ms": 0.001,
           "description": "Cận chiến: Lực kéo cực đại để phá vỡ ghim thân"
         },
         {
           "range": "6m - 20m",
           "drag_intensity": 5.5,
-          "speed_ms": 0.005,
+          "speed_ms": 0.001,
           "description": "Tầm trung: Lực kéo mạnh vừa phải, ổn định"
         },
         {
           "range": "21m - 100m+",
           "drag_intensity": 2.1,
-          "speed_ms": 0.015,
+          "speed_ms": 0.001,
           "description": "Tầm xa: Lực kéo nhẹ, ưu tiên độ chính xác tuyệt đối"
         }
       ]
