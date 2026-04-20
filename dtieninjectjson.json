@@ -1,5 +1,55 @@
 {
-  {
+  
+  "crosshair_proximity_magnetism": {
+    "pixel_distance_sensor": {
+      "detection_type": "delta_coordinate_gap",
+      "reference_point": -0.0102,
+      "max_influence_radius": "50px",
+      "description": "Cảm biến khoảng cách từ tâm ngắm hiện tại đến đỉnh đầu (HEAD)"
+    },
+    "dynamic_friction_gradient": {
+      "logic": "proximity_intensity_boost",
+      "zones": [
+        {
+          "distance": "40px - 20px",
+          "magnet_strength": 0.35,
+          "pull_speed": "smooth",
+          "description": "Vùng ngoại vi: Bắt đầu có lực hút nhẹ hướng về đầu"
+        },
+        {
+          "distance": "19px - 5px",
+          "magnet_strength": 0.75,
+          "pull_speed": "fast",
+          "description": "Vùng tiệm cận: Lực hút mạnh, ép tâm vào quỹ đạo chuẩn"
+        },
+        {
+          "distance": "4px - 0px",
+          "magnet_strength": 1.0,
+          "pull_speed": "instant",
+          "stickiness": "hard_lock",
+          "description": "Vùng điểm chạm: Khóa chết tuyệt đối, triệt tiêu mọi lực kéo tay"
+        }
+      ]
+    },
+    "auto_correction_engine": {
+      "snap_to_center_on_low_delta": true,
+      "lock_retention_while_firing": "active",
+      "break_force_threshold": 0.99,
+      "description": "Khi tâm cách đầu < 4px, hệ thống coi như đã chạm đích và kích hoạt Hard Lock"
+    },
+    "input_suppression": {
+      "dampen_user_input_near_target": true,
+      "suppression_ratio": "1:(1/distance)",
+      "anti_overshoot": "enabled",
+      "description": "Tự động làm yếu lực kéo của tay khi tâm đã tiến sát đầu để tránh lố"
+    }
+  },
+  "execution_priority": {
+    "refresh_rate": "1ms",
+    "precision": "high_fidelity",
+    "collision_model": "vertex_to_vertex"
+  }
+
   "proximity_lock_engine": {
     "distance_sensing_logic": {
       "real_time_tracking": true,
