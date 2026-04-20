@@ -1,5 +1,61 @@
 {
   
+  "aimlock_head_master_system": {
+    "hitbox_overrider": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartHeadBoundBoxExtent": 500.0,
+      "ClientHitPartJudgmentBoundBoxExtent": 500.0,
+      "description": "Mở rộng vùng chấp nhận Headshot ra xung quanh mục tiêu để đảm bảo không trượt"
+    },
+    "lock_retention_core": {
+      "stickiness_logic": {
+        "ClientHitPartAdsorb": 99.9,
+        "ClientHitPartCoff": 99.9,
+        "LockOnTargetMovement": "Synchronized",
+        "description": "Lực hút nam châm (Adsorb) giữ tâm luôn dính chặt vào đỉnh đầu"
+      },
+      "y_axis_clamp": {
+        "TargetYOffset": -0.0102,
+        "ConstraintMode": "Hard_Lock",
+        "AntiGravityCorrection": true,
+        "description": "Cố định trục Y tại tọa độ đầu, triệt tiêu mọi lực kéo xuống thân"
+      }
+    },
+    "firing_synchronization": {
+      "auto_aim_on_fire": {
+        "FollowTimeMax": 99.0,
+        "MaxAngle": 360.0,
+        "SnapSpeed": "Instant",
+        "description": "Tự động khóa 360 độ ngay khi nhấn nút bắn"
+      },
+      "bullet_path_bypass": {
+        "AimShootSpreadDir": 0,
+        "DeviationBase": 0.0,
+        "UseShootVerifyEx": false,
+        "description": "Đạn bay thẳng tuyệt đối, bỏ qua kiểm tra độ phân tán của máy chủ"
+      }
+    },
+    "dynamic_tracking_v6": {
+      "velocity_analyzer": {
+        "PredictionFrames": 1,
+        "VelocitySyncRate": "RealTime",
+        "LatencyCompensator": "Active"
+      },
+      "recoil_null_engine": {
+        "VerticalRecoil": 0.0,
+        "HorizontalRecoil": 0.0,
+        "AnimationKick": 0.0,
+        "description": "Vô hiệu hóa hoạt ảnh rung súng để giữ khóa tâm ổn định"
+      }
+    },
+    "status_verification": {
+      "ClientHeadshotJudgement": "100%",
+      "IsHeadShot": "True",
+      "ClientHeadshotPercentage": 100
+    }
+  }
+
   "neural_link_aim_system": {
     "module_flick_master": {
       "flick_acceleration_curve": "Bézier_Spline",
