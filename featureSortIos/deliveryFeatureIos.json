@@ -1,6 +1,68 @@
 {
 
-  "sustained_head_lift_system": {
+ 
+  "aimlock_system_v10": {
+    "engine_offsets": {
+      "player_controller": {
+        "local_player": "0x4101ff4",
+        "current_match": "0x3266cc0",
+        "is_local_team": "0xffffff86e6fef000"
+      },
+      "bone_transforms": {
+        "head_tf": "0x2e5a7b4",
+        "hip_tf": "0x2e5a98c",
+        "component_get_transform": "0x8ca3b10"
+      },
+      "camera_data": {
+        "main_camera": "0x6a64c64",
+        "main_camera_transform": "0x320",
+        "get_forward": "0x8a88b1c"
+      },
+      "system_functions": {
+        "get_position": "0x6bc248c",
+        "set_position": "0x6bc252c",
+        "set_aim": "0xffffff86e6fef000"
+      }
+    },
+    "activation_logic": {
+      "triggers": {
+        "on_fire": "0x2dc3804",
+        "on_sight": "0x2dc867c"
+      },
+      "filters": {
+        "is_visible": "0x2dd8f54",
+        "is_dying": "0x2dc1178",
+        "max_hp": "0x2e3e2e8"
+      }
+    },
+    "core_functionality": {
+      "lock_on_head": {
+        "priority": "CRITICAL",
+        "target_bone_index": "HEAD_TF_0x2e5a7b4",
+        "lock_retention": "PERMANENT_WHILE_FIRING",
+        "description": "Truy xuất tọa độ từ HeadTF và ép ViewMatrix trùng khớp qua SetPosition"
+      },
+      "distance_adaptation": {
+        "logic": "real_time_vector_sync",
+        "camera_origin": "0x320",
+        "compensation": "zero_latency",
+        "description": "Tính toán khoảng cách từ CameraTransform đến mục tiêu để khử độ trễ bám đuổi"
+      },
+      "movement_tracking": {
+        "sync_mode": "Internal_GetPosition_Loop",
+        "prediction_vector": "GetForward_Sync",
+        "omni_directional": true,
+        "description": "Bám đuổi mục tiêu 360 độ dựa trên hướng nhìn và vị trí thực thể"
+      }
+    },
+    "client_overwrite_settings": {
+      "aim_smooth": 0.0,
+      "aim_fov": 360.0,
+      "stickiness": 1.0,
+      "auto_recenter_to_head": "Enabled"
+    }
+  }
+ "sustained_head_lift_system": {
     "activation_trigger": {
       "input_source": "fire_button_hold",
       "hold_check_interval": "0.0001ms",
