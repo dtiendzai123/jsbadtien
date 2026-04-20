@@ -1,4 +1,65 @@
 {
+
+  "client_omni_lock_v8": {
+    "view_matrix_anchor": {
+      "lock_target_bone": "HEAD_INDEX_06",
+      "coordinate_sync": "real_time_interpolation",
+      "fov_lock_scaling": "inverse_distance_multiplier",
+      "description": "Tự động điều chỉnh ma trận góc nhìn của Client để tâm luôn trùng khớp với tọa độ đầu"
+    },
+    "distance_adaptive_logic": {
+      "near_range_snap": {
+        "distance_limit": "0m - 10m",
+        "lock_intensity": 1.0,
+        "input_bypass_ratio": 1.0,
+        "description": "Tầm gần: Vô hiệu hóa 100% lệnh từ tay, ép tâm dính chết vào đầu"
+      },
+      "long_range_precision": {
+        "distance_limit": "11m - 9999m",
+        "bullet_drop_compensation": 0,
+        "pixel_snapping_precision": "sub_atomic",
+        "description": "Tầm xa: Triệt tiêu độ rơi của đạn, khóa mục tiêu ở mức độ điểm ảnh siêu nhỏ"
+      }
+    },
+    "omni_directional_tracking": {
+      "velocity_prediction_engine": {
+        "prediction_buffer": 1,
+        "acceleration_sync": "instant",
+        "angular_velocity_cap": "none",
+        "description": "Dự đoán vector di chuyển 360 độ, không giới hạn tốc độ xoay tâm theo địch"
+      },
+      "movement_state_handler": {
+        "lock_on_jump": "active_fixed_y",
+        "lock_on_crouch": "active_fixed_y",
+        "lock_on_vehicle": "active_sync",
+        "description": "Duy trì khóa tâm ngay cả khi đối thủ nhảy, ngồi hoặc đang ngồi trên xe"
+      }
+    },
+    "client_integrity_override": {
+      "UseAimAssist": "Max_Always",
+      "ClientAimPart": "HEAD",
+      "ClientHitPartMagic": 100.0,
+      "ClientHeadshotJudgement": "100%",
+      "ClientBulletHitPartJudgment": "HEAD",
+      "description": "Ghi đè mọi bộ lọc của Client để ưu tiên sát thương đầu tuyệt đối"
+    },
+    "stability_control": {
+      "recoil_elimination": {
+        "vertical_kick": 0,
+        "horizontal_sway": 0,
+        "visual_shake_removal": true
+      },
+      "spread_nullifier": {
+        "deviation_base": 0,
+        "crosshair_bloom_lock": "minimum"
+      }
+    }
+  },
+  "execution_parameters": {
+    "refresh_rate": "0.0001ms",
+    "priority": "forced_overwrite",
+    "collision_model": "zero_gap"
+  }
   
   "client_vertex_priority_system": {
     "hitbox_remapping_logic": {
