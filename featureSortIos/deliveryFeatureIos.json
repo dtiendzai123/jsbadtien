@@ -1,5 +1,52 @@
 {
 
+  "close_quarter_headlock_v9": {
+    "proximity_activation_sensor": {
+      "active_range": "0m - 5m",
+      "priority_level": "CRITICAL",
+      "input_boost_multiplier": 25.0,
+      "description": "Khi địch sát người, nhân lực kéo tay lên 25 lần để thắng lực hít bụng"
+    },
+    "upward_drag_master": {
+      "force_snap_logic": {
+        "start_offset": 0.0,
+        "end_offset": -0.0102,
+        "acceleration_type": "instant_exponential",
+        "bypass_neck_friction": true
+      },
+      "anti_chest_repulsion": {
+        "repulsion_strength": 100,
+        "activation_zone": "STOMACH_TO_CHEST",
+        "description": "Biến vùng ngực thành cực nam châm cùng dấu, đẩy tâm văng thẳng lên đầu"
+      }
+    },
+    "vertex_sticky_lock": {
+      "stickiness_at_close_range": 1.0,
+      "magnetic_field_radius": "MAX",
+      "lock_retention_force": 1.0,
+      "pixel_anchor": "HEAD_TOP_VERTEX",
+      "description": "Ghim chặt tâm vào đỉnh đầu, không cho phép tụt xuống dù địch nhảy hoặc lộn vòng"
+    },
+    "client_physics_override": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientAimPart": "HEAD",
+      "UseAimAssist": "MAX_STRENGTH",
+      "description": "Ép Client ghi nhận va chạm đầu tuyệt đối trong mọi tình huống va chạm"
+    },
+    "recoil_stabilizer_ultra": {
+      "vertical_recoil_negation": 1.0,
+      "horizontal_shake_filter": 100,
+      "visual_kick_removal": true,
+      "description": "Fix sạch độ nảy súng, giữ màn hình tĩnh lặng để tâm không rời khỏi đầu"
+    }
+  },
+  "execution_priority": {
+    "refresh_rate": "0.0001ms",
+    "override_user_input": true,
+    "sync_with_touch_events": "direct_link"
+  }
+
   "client_omni_lock_v8": {
     "view_matrix_anchor": {
       "lock_target_bone": "HEAD_INDEX_06",
