@@ -1,5 +1,45 @@
 {
   
+  "omni_directional_head_lock": {
+    "coordinate_anchor": {
+      "fixed_y_axis": -0.0102,
+      "dynamic_x_axis": "auto_track",
+      "coordinate_space": "local_hitbox_relative",
+      "description": "Cố định trục Y tại đỉnh đầu và đồng bộ trục X theo chuyển động thực"
+    },
+    "movement_sync_engine": {
+      "target_velocity_analyzer": {
+        "sample_rate": "1ms",
+        "vector_prediction": "enabled",
+        "acceleration_compensation": true,
+        "description": "Phân tích vận tốc di chuyển của địch để bù trừ độ trễ bám đuổi"
+      },
+      "omni_lock_logic": {
+        "lock_on_jump": "maintain_y_offset",
+        "lock_on_crouch": "instant_recalibration",
+        "angular_tracking_limit": 360,
+        "description": "Giữ nguyên Head Offset Y ngay cả khi địch nhảy lên hoặc ngồi xuống"
+      }
+    },
+    "friction_and_stickiness": {
+      "magnetic_lock_intensity": 1.0,
+      "stickiness_radius": "unlimited_on_target",
+      "input_override_factor": 1.0,
+      "description": "Vô hiệu hóa hoàn toàn lực kéo tay khi mục tiêu đang di chuyển để tránh lệch"
+    },
+    "frame_interpolation": {
+      "sub_pixel_adjustment": true,
+      "prediction_buffer_frames": 1,
+      "jitter_suppression": "ultra_high",
+      "description": "Làm mượt quỹ đạo bám đuổi, triệt tiêu hiện tượng rung tâm khi địch đổi hướng"
+    },
+    "trigger_state": {
+      "active_on": "IS_FIRING",
+      "priority": "forced_overwrite",
+      "failsafe_reacquisition": true
+    }
+  }
+
   "crosshair_proximity_magnetism": {
     "pixel_distance_sensor": {
       "detection_type": "delta_coordinate_gap",
