@@ -1,5 +1,50 @@
 {
+  {
+  "proximity_lock_engine": {
+    "distance_sensing_logic": {
+      "real_time_tracking": true,
+      "unit": "coordinate_units",
+      "scaling_mode": "inverse_exponential",
+      "description": "Cảm biến khoảng cách: Khoảng cách càng giảm, cường độ khóa càng tăng theo cấp số nhân"
+    },
+    "dynamic_proximity_zones": {
+      "close_range_ultra": {
+        "distance_threshold": "0m - 7m",
+        "magnetic_force": 1.0,
+        "stickiness_strength": 1.0,
+        "input_sensitivity_dampening": 0.95,
+        "snap_speed_ms": 0.0001,
+        "description": "Tầm gần: Khóa chết tâm vào đầu, vô hiệu hóa hoàn toàn mọi lực kéo ra ngoài"
+      },
+      "mid_range_high": {
+        "distance_threshold": "8m - 25m",
+        "magnetic_force": 0.75,
+        "stickiness_strength": 0.8,
+        "input_sensitivity_dampening": 0.5,
+        "snap_speed_ms": 0.005,
+        "description": "Tầm trung: Hỗ trợ kéo tâm mượt mà, độ dính cao"
+      }
+    },
+    "zero_distance_behavior": {
+      "anti_friction_bypass": true,
+      "force_offset_y": -0.0102,
+      "hard_lock_on_fire": "enabled",
+      "ignore_chest_collision": true,
+      "description": "Khi ở cực gần, ép tâm nhảy thẳng lên đầu và bỏ qua va chạm vùng ngực"
+    },
+    "motion_stability": {
+      "jitter_filter": "maximum",
+      "velocity_sync_multiplier": 2.0,
+      "prediction_buffer": 1,
+      "description": "Đồng bộ hóa tốc độ di chuyển của tâm với đầu địch ở tốc độ cao (cận chiến)"
+    }
+  },
+  "execution_metrics": {
+    "priority": "kernel_level",
+    "response_time": "zero_latency",
+    "aim_style": "unbreakable_lock"
   }
+
 
   "precision_clamping_system": {
     "limit_controller": {
