@@ -1,5 +1,46 @@
 {
   
+  "neural_link_aim_system": {
+    "module_flick_master": {
+      "flick_acceleration_curve": "Bézier_Spline",
+      "time_to_target_ms": 0.001,
+      "overshoot_correction": "zero_latency",
+      "description": "Tạo đường cong di chuyển tối ưu nhất từ vị trí hiện tại đến đầu địch"
+    },
+    "hit_registration_bypass": {
+      "ClientHitPartMagic": 100.0,
+      "UseShootVerifyEx": false,
+      "DSHitPartJudgment": "HEAD",
+      "ClientBulletHitPartJudgment": "HEAD",
+      "description": "Ghi nhận sát thương vào đầu ngay cả khi đạn bay sượt qua"
+    },
+    "bone_priority_engine": {
+      "primary_target": "bone_06_head",
+      "secondary_target": "bone_07_neck",
+      "auto_switch_on_obstruction": true,
+      "vertical_lock_offset": -0.0102,
+      "description": "Ưu tiên xương số 06, tự động điều chỉnh nếu có vật cản che khuất"
+    },
+    "dynamic_stability_v5": {
+      "accessories_v_recoil_factor": 0.0,
+      "accessories_h_recoil_factor": 0.0,
+      "accessories_recovery_factor": 100.0,
+      "animation_kick_suppression": true,
+      "description": "Triệt tiêu hoàn toàn hiệu ứng giật nảy của súng và hoạt ảnh nhân vật"
+    },
+    "logic_states": {
+      "IsHeadShot": "Enabled_Always",
+      "ClientHeadshotJudgement": "100%",
+      "ClientAimAssistJudgment": "Max_Strength",
+      "bIsHeadshot": "true"
+    }
+  },
+  "advanced_physics_override": {
+    "bullet_travel_speed": "infinite",
+    "ignore_range_attenuation": true,
+    "hit_base_factor": 99.9
+  }
+
   "STExtra_Base_Character_Optimization": {
     "hit_judgment_core": {
       "HitBoxJudgment": "Max",
