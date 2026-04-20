@@ -1,6 +1,79 @@
 {
 
  
+  "advanced_aimlock_v12": {
+    "target_identity_verification": {
+      "match_state": "ACTIVE_CURRENT_MATCH",
+      "player_identity": "LOCAL_CLIENT_ONLY",
+      "team_recognition": "FILTER_FRIENDLY_BY_LOCAL_TEAM",
+      "target_status": {
+        "minimum_health": 1,
+        "ignore_state": "IS_DYING",
+        "visibility_requirement": "LINE_OF_SIGHT_REQUIRED"
+      }
+    },
+    "bone_mapping_priority": {
+      "primary_anchor": "HEAD_TRANSFORM_INDEX",
+      "secondary_anchor": "HIP_TRANSFORM_INDEX",
+      "hitbox_adjustment": {
+        "focus_point": "VERTEX_TOP_OF_HEAD",
+        "precision_offset_y": -0.0102,
+        "auto_switch_to_hip": false
+      }
+    },
+    "dynamic_lock_mechanics": {
+      "trigger_conditions": {
+        "activation_on_fire": "ENABLED_STRICT",
+        "activation_on_ads": "ENABLED_STRICT",
+        "minimum_trigger_duration": "0ms"
+      },
+      "omni_directional_tracking": {
+        "horizontal_lock": "360_DEGREE_OMNI",
+        "vertical_lock": "LOCKED_AT_HEAD_LEVEL",
+        "movement_compensation": "REAL_TIME_VELOCITY_SYNC",
+        "jump_tracking": "FIXED_OFFSET_MAINTENANCE"
+      },
+      "distance_scaling_force": {
+        "close_range_0m_5m": {
+          "drag_intensity": "MAXIMUM_FORCE",
+          "stickiness": 1.0,
+          "input_suppression": "100%"
+        },
+        "mid_range_6m_50m": {
+          "drag_intensity": "BALANCED_ADAPTIVE",
+          "stickiness": 0.85
+        },
+        "long_range_51m_plus": {
+          "drag_intensity": "PRECISION_PIXEL_LOCK",
+          "stickiness": 0.7
+        }
+      }
+    },
+    "spatial_data_processing": {
+      "camera_sync": {
+        "origin_source": "MAIN_CAMERA_TRANSFORM",
+        "view_vector": "GET_FORWARD_PROJECTION",
+        "fov_constraint": 360.0
+      },
+      "coordinate_transformation": {
+        "extraction_method": "INTERNAL_GET_POSITION",
+        "injection_method": "INTERNAL_SET_POSITION_AND_AIM",
+        "update_frequency": "REAL_TIME_FRAME_SYNC"
+      }
+    },
+    "recoil_and_stability_override": {
+      "vertical_recoil_negation": 1.0,
+      "horizontal_sway_reduction": 1.0,
+      "visual_camera_shake": "DISABLED",
+      "bullet_spread_pattern": "FIXED_CENTER_POINT"
+    },
+    "client_integrity_bypass": {
+      "shoot_verification": "BYPASS_SERVER_RECONCILIATION",
+      "aim_assist_judgment": "FORCED_CRITICAL_HEAD",
+      "hit_registration": "INSTANT_CLIENT_SIDE_CONFIRM"
+    }
+  }
+
   "aimlock_system_v10": {
     "engine_offsets": {
       "player_controller": {
