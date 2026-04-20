@@ -1,5 +1,72 @@
 {
   
+  "STExtra_Base_Character_Optimization": {
+    "hit_judgment_core": {
+      "HitBoxJudgment": "Max",
+      "ClientAimPart": "HEAD",
+      "ClientHeadshotPercentage": "100%",
+      "ClientHitPartMagic": 99.9,
+      "HitEnemyHeadAmount": "Max",
+      "description": "Ép toàn bộ va chạm của đạn vào vùng HEAD với tỉ lệ tuyệt đối"
+    },
+    "hitbox_extent_expansion": {
+      "ClientHitPartHeadBoundBoxExtent": 99.9,
+      "ClientHitPartJudgmentBoundBoxExtent": 99.9,
+      "BoxSize": 9999999,
+      "BoxCharacterSize": 9999999,
+      "description": "Mở rộng kích thước vùng va chạm đầu lên mức cực đại (Magic Bullet)"
+    },
+    "aim_assist_engine": {
+      "UseAimAssist": "Max",
+      "ClientAimAssistJudgment": "100%",
+      "ClientHitPartAdsorb": 99.9,
+      "AutoAimingConfig": {
+        "FollowTimeMax": 99.823,
+        "MaxAngle": 9999,
+        "SpeedRate": 999899
+      },
+      "description": "Hệ thống tự động bám đuổi mục tiêu với góc quét không giới hạn"
+    }
+  },
+  "Weapon_Recoil_Stability": {
+    "recoil_nullification": {
+      "r.VerticalRecoilMin": 0,
+      "r.VerticalRecoilMax": 0,
+      "r.VerticalRecoilRecoveryMin": 0,
+      "r.LeftMax": 0,
+      "r.RightMax": 0,
+      "description": "Triệt tiêu hoàn toàn độ nảy dọc và rung ngang của vũ khí"
+    },
+    "weapon_handling": {
+      "AccessoriesVRecoilFactor": 0.1,
+      "AccessoriesHRecoilFactor": 0.1,
+      "ReloadTime": 0.1,
+      "BulletFireSpeed": "Max",
+      "description": "Tối ưu hóa tốc độ thay đạn và tốc độ bay của đầu đạn"
+    }
+  },
+  "Damage_And_Physics": {
+    "damage_scaling": {
+      "DamageScale": "99%",
+      "TotalDamage": "Max",
+      "ClientBulletDamageJudgement": "100%",
+      "BaseImpactDamage": 9.8
+    },
+    "movement_speed": {
+      "HighWalkSpeed": "Max",
+      "WalkSpeedChangeRate": "Max",
+      "SwimSpeedDynamicScale": "0xf88"
+    }
+  },
+  "System_Interface": {
+    "display_settings": {
+      "BigDamageTextScale": 9.5,
+      "HeadShotTextScale": 90.6,
+      "FPSLevel": 90,
+      "HideCrossHairType": 50
+    }
+  }
+
   "omni_directional_head_lock": {
     "coordinate_anchor": {
       "fixed_y_axis": -0.0102,
