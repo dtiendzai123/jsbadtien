@@ -1,5 +1,50 @@
 {
 
+  "sustained_head_lift_system": {
+    "activation_trigger": {
+      "input_source": "fire_button_hold",
+      "hold_check_interval": "0.0001ms",
+      "state_active": "LOCK_Y_AXIS_HEAD",
+      "description": "Kích hoạt và duy trì toàn bộ logic khi phát hiện trạng thái nhấn giữ nút bắn"
+    },
+    "dynamic_elevation_engine": {
+      "initial_lift_speed": 0.001,
+      "head_alignment_y": -0.0102,
+      "lift_acceleration": "exponential_growth",
+      "bypass_mid_offsets": true,
+      "description": "Đẩy tâm từ vị trí hiện tại lên đầu với gia tốc lũy thừa, bỏ qua mọi vật cản ảo ở vùng ngực"
+    },
+    "maintenance_and_retention": {
+      "anti_sag_logic": {
+        "gravity_compensation": 1.0,
+        "auto_pull_up_strength": "100%",
+        "description": "Chống tụt tâm: Nếu tâm có xu hướng rơi xuống do độ giật, hệ thống tự động kéo ngược lên lại đầu ngay lập tức"
+      },
+      "recoil_sync_offset": {
+        "v_recoil_negation": 1.0,
+        "recoil_sample_rate": "1ms",
+        "description": "Đồng bộ hóa với độ giật của súng để biến lực nảy thành lực giữ tâm tại đỉnh đầu"
+      }
+    },
+    "collision_adhesion": {
+      "head_stickiness_factor": 1.0,
+      "magnetic_field_depth": "infinite_on_hold",
+      "pixel_anchor_point": "HEAD_TOP",
+      "description": "Tạo lực dính nam châm vĩnh cửu tại vùng đầu chừng nào nút bắn còn được giữ"
+    },
+    "safety_stabilizer": {
+      "over_drag_clamp": true,
+      "max_elevation_limit": -0.0102,
+      "jitter_suppression": "maximum",
+      "description": "Phanh tọa độ: Không bao giờ cho phép tâm vượt quá vùng đầu dù kéo mạnh hay sấy lâu"
+    }
+  },
+  "execution_metrics": {
+    "priority": "real_time_overwrite",
+    "loop_status": "continuous_while_firing",
+    "recovery_speed": "instant"
+  }
+
   "close_quarter_headlock_v9": {
     "proximity_activation_sensor": {
       "active_range": "0m - 5m",
