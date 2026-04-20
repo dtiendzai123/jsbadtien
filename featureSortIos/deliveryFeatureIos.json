@@ -40,7 +40,7 @@
     "weapon_handling": {
       "AccessoriesVRecoilFactor": 0.1,
       "AccessoriesHRecoilFactor": 0.1,
-      "ReloadTime": 0.1,
+      "ReloadTime": 0.0,
       "BulletFireSpeed": "Max",
       "description": "Tối ưu hóa tốc độ thay đạn và tốc độ bay của đầu đạn"
     }
