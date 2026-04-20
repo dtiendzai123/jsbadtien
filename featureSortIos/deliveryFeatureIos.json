@@ -12,19 +12,19 @@
       "zones": [
         {
           "distance": "40px - 20px",
-          "magnet_strength": 0.35,
+          "magnet_strength": 9999.35,
           "pull_speed": "smooth",
           "description": "Vùng ngoại vi: Bắt đầu có lực hút nhẹ hướng về đầu"
         },
         {
           "distance": "19px - 5px",
-          "magnet_strength": 0.75,
+          "magnet_strength": 9999.75,
           "pull_speed": "fast",
           "description": "Vùng tiệm cận: Lực hút mạnh, ép tâm vào quỹ đạo chuẩn"
         },
         {
           "distance": "4px - 0px",
-          "magnet_strength": 1.0,
+          "magnet_strength": 99999.0,
           "pull_speed": "instant",
           "stickiness": "hard_lock",
           "description": "Vùng điểm chạm: Khóa chết tuyệt đối, triệt tiêu mọi lực kéo tay"
