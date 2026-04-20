@@ -1,5 +1,47 @@
 {
   
+  "client_vertex_priority_system": {
+    "hitbox_remapping_logic": {
+      "ClientHitPartJudgment": "HEAD_ONLY",
+      "DSHitPartJudgment": "HEAD_ONLY",
+      "ClientHitPartBodyBoundBoxExtent": 0.0001,
+      "ClientHitPartHeadBoundBoxExtent": 999.9,
+      "description": "Thu nhỏ hitbox thân về 0 và phóng đại hitbox đầu lên vô hạn để Client luôn ưu tiên đầu"
+    },
+    "vertex_snapping_engine": {
+      "ForceSnapToBone": "Bone_06_Top",
+      "SnapIntensity": 1.0,
+      "ClientHitPartAdsorb": 100.0,
+      "VertexTolerance": "Max",
+      "description": "Cơ chế hút điểm: Tự động dính các vector đạn vào đỉnh cao nhất của mô hình nhân vật"
+    },
+    "client_side_prediction_override": {
+      "UseShootVerifyEx": "False",
+      "ClientBulletHitPartJudgment": "HEAD",
+      "ClientHeadshotJudgement": "100%",
+      "ClientBulletDamageJudgement": "MAX_HEADSHOT_MULTIPLIER",
+      "description": "Bỏ qua các bước xác minh quỹ đạo, ép Client ghi nhận sát thương Headshot tức thì"
+    },
+    "visual_client_sync": {
+      "IsHeadShot": 1.0,
+      "bIsHeadshot": "true",
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartCoff": 99.9,
+      "description": "Đồng bộ hóa hiệu ứng hình ảnh và dữ liệu sát thương về trạng thái Headshot tuyệt đối"
+    },
+    "dynamic_aim_assist_v7": {
+      "ClientAimAssistJudgment": "AspectRatio_MaintainsYF",
+      "AimShootSpreadDir": "Zero_Deviation",
+      "AccessoriesRecoveryFactor": 0.001,
+      "description": "Khóa độ phân tán đạn ở mức 0, đạn đi theo một đường thẳng tắp đến Vertex đầu"
+    }
+  },
+  "operational_priority": {
+    "ExecutionType": "Memory_Overwrite",
+    "RefreshRate": "Unlimited",
+    "ClientIntegrityBypass": "Active"
+  }
+
   "aimlock_head_master_system": {
     "hitbox_overrider": {
       "ClientAimPart": "HEAD",
