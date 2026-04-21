@@ -1,5 +1,57 @@
 {
   
+  "active_drag_to_head_anchor": {
+    "drag_detection_engine": {
+      "input_type": "continuous_touch_move",
+      "dynamic_velocity_threshold": "any_upward_movement",
+      "monitoring_rate": "0.0001ms",
+      "description": "Phát hiện ngay lập tức hành động kéo tâm lên của người chơi để kích hoạt trợ lực"
+    },
+    "smart_locking_transition": {
+      "transition_logic": {
+        "detection_radius": "head_coordinate_proximity",
+        "lock_activation_point": -0.0102,
+        "input_override_ratio": 1.0,
+        "description": "Khi phát hiện tâm đang được kéo về phía đầu, hệ thống sẽ 'đón' lấy tâm và ghim chặt vào tọa độ vàng"
+      },
+      "force_alignment": {
+        "bypass_neck_resistance": true,
+        "snap_on_velocity_match": "instant",
+        "description": "Triệt tiêu độ trễ giữa thao tác tay và phản hồi của tâm ngắm"
+      }
+    },
+    "sustained_precision_maintenance": {
+      "anchor_status": {
+        "keep_locked_while_moving": true,
+        "auto_recenter_on_recoil": "forced",
+        "anti_drift_protection": 1.0
+      },
+      "vertical_clamp_v2": {
+        "clamp_coordinate_y": -0.0102,
+        "clamp_strength": "absolute",
+        "description": "Duy trì trục dọc không biến đổi, bất kể người chơi vẫn đang tiếp tục vuốt tay lên"
+      }
+    },
+    "hitbox_adhesion_override": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientAimPart": "HEAD",
+      "ClientHeadshotJudgement": "100%",
+      "description": "Ép Client duy trì trạng thái 'Hít đầu' ở mức tối đa trong suốt quá trình kéo"
+    },
+    "recoil_stabilization": {
+      "recoil_compensation_x": 0.0,
+      "recoil_compensation_y": 1.0,
+      "shake_nullification": true,
+      "description": "Giữ màn hình tĩnh tuyệt đối khi đang kéo tâm để đảm bảo độ chính xác 100%"
+    }
+  },
+  "execution_metrics": {
+    "priority": "ULTIMATE_OVERWRITE",
+    "sync_type": "frame_perfect_locking",
+    "status": "ACTIVE_MAINTENANCE"
+  },
+
   "absolute_vertical_surge_system": {
     "bypass_friction_zones": {
       "zones_to_ignore": ["STOMACH", "CHEST", "SHOULDER", "NECK"],
