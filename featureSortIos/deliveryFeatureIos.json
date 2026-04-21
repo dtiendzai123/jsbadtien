@@ -54,7 +54,7 @@
 
   "absolute_vertical_surge_system": {
     "bypass_friction_zones": {
-      "zones_to_ignore": ["STOMACH", "CHEST", "SHOULDER", "NECK"],
+      "zones_to_ignore": ["STOMACH", "CHEST", "SHOULDER","HIPS", "NECK"],
       "friction_multiplier": 0.0,
       "repulsion_force": 2.0,
       "description": "Vô hiệu hóa độ dính tại các vùng thân; tạo lực đẩy ngược khi tâm đi ngang qua ngực/cổ"
