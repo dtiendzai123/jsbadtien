@@ -1,4 +1,56 @@
 {
+  
+  "sustained_fire_head_anchor": {
+    "touch_input_sensor": {
+      "detection_source": "fire_button_drag_event",
+      "motion_threshold": "0.001px",
+      "state_monitoring": "ON_HOLD_AND_DRAG",
+      "description": "Cảm biến phát hiện khi nút bắn đang bị nhấn giữ và di chuyển trên màn hình"
+    },
+    "dynamic_head_lock_logic": {
+      "anchor_point": {
+        "bone_index": 6,
+        "offset_y": -0.0102,
+        "coordinate_mode": "hitbox_relative"
+      },
+      "input_filter": {
+        "ignore_unnatural_sway": true,
+        "suppress_manual_drag_y": "100%",
+        "allow_manual_drag_x": "adaptive",
+        "description": "Vô hiệu hóa lực kéo dọc từ tay người chơi, chỉ giữ lại lực kéo từ hệ thống để ghim đầu"
+      }
+    },
+    "maintenance_and_stabilization": {
+      "recoil_energy_redirection": {
+        "mode": "convert_to_stickiness",
+        "lift_compensation": 1.0,
+        "description": "Chuyển hóa độ giật của súng thành lực giữ tâm, ngăn tâm bị tụt xuống ngực"
+      },
+      "velocity_sync_engine": {
+        "tracking_speed": "frame_perfect",
+        "prediction_buffer": 1,
+        "description": "Đồng bộ hóa vận tốc di chuyển của tâm với đầu mục tiêu theo thời gian thực"
+      }
+    },
+    "clamping_and_overshoot_fix": {
+      "max_coordinate_limit": -0.0102,
+      "min_coordinate_limit": -0.0100,
+      "hard_clamp_status": "ENABLED",
+      "description": "Kẹp chặt tọa độ trong một phạm vi siêu nhỏ tại đầu, không cho phép tâm lọt ra ngoài"
+    },
+    "client_integrity_commands": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "UseAimAssist": "MAX_STRENGTH"
+    }
+  },
+  "execution_priority": {
+    "update_rate": "0.0001ms",
+    "overwrite_priority": "FORCED_OVER_USER",
+    "loop_type": "continuous_while_active"
+  },
+
   "absolute_head_priority_system": {
     "hitbox_redefinition": {
       "ClientAimPart": "HEAD",
