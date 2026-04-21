@@ -1,6 +1,43 @@
 {
 
  
+  "heavy_aim_fix_engine": {
+    "friction_bypass_module": {
+      "body_friction_reduction": 1.0,
+      "chest_stickiness_nullifier": "MAXIMUM",
+      "dynamic_resistance_removal": true,
+      "description": "Xóa bỏ lực cản ảo và độ dính tại vùng ngực, giúp tâm trượt tự do"
+    },
+    "input_acceleration_boost": {
+      "initial_drag_velocity": 3.5,
+      "vertical_acceleration_curve": "exponential_rise",
+      "touch_response_optimization": "zero_delay",
+      "description": "Tăng mạnh gia tốc kéo dọc để thắng lực ghì của tâm ngắm mặc định"
+    },
+    "collision_logic_recalibration": {
+      "target_offset": -0.0102,
+      "force_upward_on_contact": true,
+      "bypass_intermediate_points": ["stomach", "chest", "neck"],
+      "description": "Khi chạm vào mục tiêu, ép tâm nhảy thẳng qua các vùng thân để lên đầu"
+    },
+    "stability_and_smoothing": {
+      "anti_drag_weight_filter": true,
+      "pixel_skip_prevention": false,
+      "smooth_motion_interpolation": "ultra_fast",
+      "description": "Loại bỏ cảm giác 'nặng' khi vuốt, giữ chuyển động mượt nhưng dứt khoát"
+    },
+    "recoil_synergy": {
+      "convert_recoil_to_lift": 0.85,
+      "vertical_stability_lock": "enabled",
+      "description": "Chuyển hóa 85% lực giật của súng thành trợ lực đẩy tâm lên phía trên"
+    }
+  },
+  "calibration_status": {
+    "aim_weight": "ULTRA_LIGHT",
+    "response_type": "INSTANT_FLICK",
+    "priority": "SYSTEM_LEVEL_OVERWRITE"
+  }
+
   "aim_drag_fix_module": {
     "anti_chest_lock_logic": {
       "detection_zone": "BODY_CHEST_OFFSET",
