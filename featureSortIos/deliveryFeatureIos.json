@@ -1,5 +1,60 @@
+
 {
-{
+  
+  "precision_head_clamp_v15": {
+    "anti_overshoot_mechanics": {
+      "pixel_perfect_braking": {
+        "detection_radius": "15px_from_head",
+        "speed_reduction_factor": "dynamic_damping",
+        "braking_intensity": 1.0,
+        "description": "Khi tâm tiến sát đầu trong khoảng 15px, hệ thống tự động hãm tốc độ kéo để tránh vọt lố"
+      },
+      "inertia_kill_switch": {
+        "velocity_threshold": "any",
+        "snap_on_contact": true,
+        "zero_momentum_at_target": true,
+        "description": "Triệt tiêu hoàn toàn lực quán tính ngay khi tọa độ tâm ngắm trùng với Bone_06"
+      }
+    },
+    "drift_correction_logic": {
+      "magnetic_axis_lock": {
+        "axis_clamping": "Y_AXIS_FIXED",
+        "lock_coordinate": -0.0102,
+        "drift_tolerance": 0.0,
+        "description": "Khóa chặt trục dọc. Dù nhạy cao làm tay bị rung ngang, tâm vẫn bị hút về đường thẳng trung tâm đầu"
+      },
+      "horizontal_stabilizer": {
+        "sway_reduction": 1.0,
+        "centering_force": "high",
+        "description": "Khử độ lệch ngang khi kéo tâm, ép quỹ đạo đi theo một đường thẳng đứng"
+      }
+    },
+    "high_sens_optimization": {
+      "input_recalibration": {
+        "sens_scaling_near_target": 0.1,
+        "micro_movement_precision": "sub_pixel",
+        "description": "Tự động giảm độ nhạy xuống 10 lần khi tâm đã nằm trong vùng va chạm đầu"
+      },
+      "frame_interpolation": {
+        "refresh_rate": "0.0001ms",
+        "position_prediction": "enabled",
+        "description": "Bù trừ khung hình để tránh hiện tượng tâm 'nhảy' qua đầu do FPS cao hoặc nhạy cao"
+      }
+    },
+    "retention_anchor": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "stickiness_radius": "MAX",
+      "hold_on_fire": true,
+      "description": "Neo giữ tâm vĩnh viễn tại điểm va chạm chừng nào còn áp lực nhấn giữ nút bắn"
+    }
+  },
+  "operational_result": {
+    "overshoot_fix": "100%",
+    "drift_prevention": "ACTIVE",
+    "aim_stability": "ROCK_SOLID"
+  }
+
   "headshot_retention_system": {
     "drag_to_lock_transition": {
       "detection_point": "BONE_INDEX_06_HEAD",
