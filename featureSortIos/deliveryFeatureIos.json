@@ -1,5 +1,48 @@
 {
   
+  "absolute_vertical_surge_system": {
+    "bypass_friction_zones": {
+      "zones_to_ignore": ["STOMACH", "CHEST", "SHOULDER", "NECK"],
+      "friction_multiplier": 0.0,
+      "repulsion_force": 2.0,
+      "description": "Vô hiệu hóa độ dính tại các vùng thân; tạo lực đẩy ngược khi tâm đi ngang qua ngực/cổ"
+    },
+    "auto_pull_up_logic": {
+      "activation_event": "FIRE_BUTTON_HOLD_AND_DRAG",
+      "minimum_pull_force": "MAX_VERTICAL",
+      "target_y_clamping": -0.0102,
+      "acceleration_profile": "linear_constant",
+      "description": "Tự động kéo hẳn tâm lên theo trục dọc với lực không đổi cho đến khi chạm tọa độ đầu"
+    },
+    "dynamic_hitbox_remapping": {
+      "priority_shift": {
+        "from": "CENTER_MASS",
+        "to": "HEAD_VERTEX",
+        "transition_time": "0ms"
+      },
+      "bone_06_magnetism": 1.0,
+      "description": "Dịch chuyển ưu tiên hít từ tâm người sang đỉnh đầu ngay lập tức"
+    },
+    "stabilization_on_arrival": {
+      "lock_on_head_contact": true,
+      "anti_slip_system": "forced_retention",
+      "recoil_upward_bias": 1.0,
+      "description": "Khi tâm đã vượt qua cổ và chạm đầu, kích hoạt chế độ khóa chết, không cho tụt xuống"
+    },
+    "client_integrity_overrides": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartAreaHead": 99.9,
+      "ClientHitPartAreaBody": 0.001
+    }
+  },
+  "operational_mode": {
+    "surge_status": "ENABLED",
+    "bypass_efficiency": "100%",
+    "locking_precision": "ABSOLUTE_HEAD"
+  },
+
   "sustained_fire_head_anchor": {
     "touch_input_sensor": {
       "detection_source": "fire_button_drag_event",
