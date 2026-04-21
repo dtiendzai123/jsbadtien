@@ -1,5 +1,60 @@
 {
   
+  "client_magic_bullet_injection": {
+    "projectile_logic_override": {
+      "bullet_path_redirection": {
+        "source": "GET_LOCAL_PLAYER_WEAPON_INST",
+        "destination_anchor": "HEAD_TRANSFORM_0x2e5a7b4",
+        "extraction_method": "TRANSFORM_INTERNAL_GET_POSITION",
+        "description": "Bẻ cong quỹ đạo đạn từ họng súng hướng thẳng vào tọa độ đầu mục tiêu"
+      },
+      "spread_and_deviation_fix": {
+        "AimShootSpreadDir": 0,
+        "DeviationBase": 0.0,
+        "BulletVelocitySync": "INSTANT",
+        "description": "Triệt tiêu độ nở tâm và độ lệch đạn; đạn bay thành một đường thẳng tuyệt đối"
+      }
+    },
+    "collision_force_alignment": {
+      "hit_scan_priority": {
+        "primary_part": "HEAD",
+        "fallback_part": "HEAD",
+        "ignore_limbs": true,
+        "description": "Ép mọi va chạm vật lý của đạn chỉ xảy ra tại vùng đầu (Bone 06)"
+      },
+      "adsorption_mechanics": {
+        "ClientHitPartAdsorb": 100.0,
+        "ClientHitPartMagic": 100.0,
+        "ClientHitPartAreaHead": 999.9,
+        "description": "Tạo lực hút 'ma thuật', đạn bay gần đầu sẽ tự động bị hút vào tâm đầu"
+      }
+    },
+    "client_integrity_bypass": {
+      "damage_packet_modification": {
+        "ForcedHitPart": "HEAD",
+        "UseShootVerifyEx": false,
+        "ClientHeadshotJudgement": "100%",
+        "description": "Ghi đè gói tin gửi về server: Mọi viên đạn trúng địch đều báo cáo là Headshot"
+      }
+    },
+    "view_camera_synchronization": {
+      "MainCameraTransform": "0x320",
+      "GetForward": "0x8a88b1c",
+      "sync_bullet_to_view": true,
+      "description": "Đồng bộ hướng đạn theo trục nhìn của Camera đã được khóa vào đầu"
+    },
+    "activation_state": {
+      "trigger_condition": "GET_IS_FIRING_0x2dc3804",
+      "target_filter": "GET_IS_VISIBLE_0x2dd8f54",
+      "execution_rate": "PER_BULLET_TICK"
+    }
+  },
+  "operational_result": {
+    "accuracy_index": "100%",
+    "headshot_ratio": "MAXIMUM",
+    "status": "BULLET_FORCED_HEAD_ONLY"
+  },
+
   "system_set_aim_core": {
     "identity_anchor": {
       "active_session": "GET_LOCAL_PLAYER_INSTANCE",
