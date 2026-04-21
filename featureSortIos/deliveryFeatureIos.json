@@ -1,5 +1,43 @@
 {
-
+{
+  "headshot_retention_system": {
+    "drag_to_lock_transition": {
+      "detection_point": "BONE_INDEX_06_HEAD",
+      "transition_speed": "INSTANT",
+      "lock_trigger_threshold": "4px_proximity",
+      "description": "Chuyển từ chế độ kéo (Drag) sang chế độ Khóa (Lock) ngay khi tâm cách đầu 4 pixel"
+    },
+    "vertical_clamp_mechanism": {
+      "fixed_y_axis": -0.0102,
+      "clamp_state": "STRICT_FORCED",
+      "anti_over_drag_buffer": 0.0,
+      "description": "Thiết lập trần tọa độ Y; dù tay tiếp tục vuốt lên, tâm vẫn bị ghim chết tại -0.0102"
+    },
+    "dynamic_friction_anchor": {
+      "friction_at_target": 1.0,
+      "inertia_nullification": true,
+      "input_dampening_ratio": "100%",
+      "description": "Tạo độ lầy (Friction) cực đại tại đầu để triệt tiêu mọi lực quán tính từ tay người chơi"
+    },
+    "sustained_alignment_logic": {
+      "while_firing_active": true,
+      "auto_recenter_interval": "0.001ms",
+      "recoil_compensation_sync": "1:1",
+      "description": "Liên tục bù trừ độ giật của súng để giữ tâm không bị rơi xuống hoặc nảy lên khỏi đầu"
+    },
+    "client_integrity_lock": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "UseAimAssist": "MAX_STRENGTH"
+    }
+  },
+  "operational_state": {
+    "status": "HEAD_LOCKED",
+    "retention_force": "ABSOLUTE",
+    "stabilization": "ACTIVE"
+  }
+}
  
   "heavy_aim_fix_engine": {
     "friction_bypass_module": {
