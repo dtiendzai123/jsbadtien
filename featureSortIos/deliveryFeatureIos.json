@@ -1,6 +1,48 @@
 {
 
  
+  "aim_drag_fix_module": {
+    "anti_chest_lock_logic": {
+      "detection_zone": "BODY_CHEST_OFFSET",
+      "friction_reduction": 1.0,
+      "repulsion_force": "MAXIMUM",
+      "description": "Triệt tiêu hoàn toàn lực hít mặc định tại vùng ngực để tâm không bị khựng lại"
+    },
+    "dynamic_drag_acceleration": {
+      "initial_velocity_boost": 2.5,
+      "upward_force_scaling": "exponential",
+      "correction_speed_ms": 0.0001,
+      "description": "Tăng gia tốc kéo lên theo hàm lũy thừa ngay khi nhấn nút bắn"
+    },
+    "offset_force_alignment": {
+      "current_y_correction": {
+        "if_below_head": "ADD_FORCE_VECTOR_UP",
+        "target_offset": -0.0102,
+        "snap_intensity": 1.0
+      },
+      "gravity_nullification": {
+        "vertical_drop_compensation": 1.0,
+        "bullet_travel_straight": true
+      }
+    },
+    "input_latency_optimizer": {
+      "touch_sampling_rate": "MAX",
+      "frame_delay_bypass": true,
+      "sync_with_internal_aim": "FORCED"
+    },
+    "stability_assurance": {
+      "over_drag_protection": "clamp_at_head",
+      "jitter_filter": "high_fidelity",
+      "recoil_upward_assist": true,
+      "description": "Biến độ giật của súng thành trợ lực để đẩy tâm lên cao hơn"
+    }
+  },
+  "fix_status": {
+    "status": "CALIBRATED",
+    "priority": "HIGH",
+    "effect": "INSTANT_HEADSHOT_ALIGNMENT"
+  }
+
   "advanced_aimlock_v12": {
     "target_identity_verification": {
       "match_state": "ACTIVE_CURRENT_MATCH",
