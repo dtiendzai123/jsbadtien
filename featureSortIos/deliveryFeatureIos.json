@@ -1,5 +1,69 @@
 {
   
+  "system_set_aim_core": {
+    "identity_anchor": {
+      "active_session": "GET_LOCAL_PLAYER_INSTANCE",
+      "verification": "IS_LOCAL_TEAM_VALIDATOR",
+      "status_check": "GET_IS_DIEING_QUERY",
+      "description": "Xác định thực thể người chơi và đảm bảo trạng thái hoạt động trước khi can thiệp tâm"
+    },
+    "spatial_data_acquisition": {
+      "target_extraction": {
+        "target_bone": "HEAD_TRANSFORM",
+        "access_method": "COMPONENT_GET_TRANSFORM",
+        "coordinate_capture": "TRANSFORM_INTERNAL_GET_POSITION",
+        "description": "Truy xuất chính xác tọa độ X, Y, Z của xương đầu mục tiêu từ hệ thống Transform"
+      },
+      "origin_extraction": {
+        "source": "MAIN_CAMERA_TRANSFORM",
+        "vector_origin": "TRANSFORM_INTERNAL_GET_POSITION",
+        "forward_direction": "GET_FORWARD_VECTOR",
+        "description": "Lấy điểm gốc của camera và hướng nhìn hiện tại để làm mốc tính toán góc lệch"
+      }
+    },
+    "set_aim_execution_logic": {
+      "calculation_engine": {
+        "aim_vector": "TARGET_POS_MINUS_CAMERA_POS",
+        "normalization": "UNIT_VECTOR_CONVERSION",
+        "prediction_sync": "GET_FORWARD_ALIGNMENT"
+      },
+      "coordinate_injection": {
+        "apply_to": "LOCAL_PLAYER_VIEW_TRANSFORM",
+        "write_method": "TRANSFORM_INTERNAL_SET_POSITION",
+        "override_function": "SET_AIM_COMMAND",
+        "description": "Ép ma trận góc nhìn thay đổi theo vector mục tiêu, ghi đè hướng nhìn cũ bằng tọa độ mục tiêu mới"
+      }
+    },
+    "sustained_lock_parameters": {
+      "lock_intensity": {
+        "on_fire_event": "MAXIMUM_FORCE_SET",
+        "on_sighting_event": "PRECISION_SNAP",
+        "update_frequency": "REAL_TIME_FRAME_SYNC"
+      },
+      "stability_checks": {
+        "anti_recoil_sync": "ZERO_VECTOR_DEVIATION",
+        "clamping_y": -0.0102,
+        "interpolation": "INSTANT_SET_NO_SMOOTHING"
+      }
+    },
+    "integrity_bypass_layer": {
+      "visibility_check": "GET_IS_VISIBLE_FUNC",
+      "shoot_verification": "BYPASS_INTERNAL_LOGIC",
+      "hit_registration": "FORCED_HEADSHOT_JUDGEMENT"
+    }
+  },
+  "execution_priority": {
+    "order": [
+      "GET_LOCAL_PLAYER",
+      "COMPONENT_GET_TRANSFORM",
+      "TRANSFORM_INTERNAL_GET_POSITION",
+      "CALCULATE_VECTOR",
+      "TRANSFORM_INTERNAL_SET_POSITION",
+      "SET_AIM"
+    ],
+    "refresh_rate": "EXACT_TICK_SYNC"
+  },
+
   "main_camera_transform_engine": {
     "view_matrix_manipulator": {
       "camera_origin_offset": "0x320",
