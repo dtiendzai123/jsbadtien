@@ -1,5 +1,65 @@
 {
   
+  "ultra_hard_lock_client_v20": {
+    "absolute_hitbox_remapping": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartAreaHead": 999.9,
+      "ClientHitPartAreaBody": 0.0,
+      "description": "Mở rộng tối đa vùng đầu và vô hiệu hoá hoàn toàn vùng thân để Client không thể hít vào ngực"
+    },
+    "instant_anchor_mechanics": {
+      "lock_trigger": {
+        "on_input": "ANY_TOUCH_DRAG",
+        "snap_speed": "IMMEDIATE",
+        "lock_intensity": 1.0,
+        "description": "Kích hoạt khóa cứng ngay khi có tác động chạm, tâm nhảy thẳng đến Bone_06"
+      },
+      "coordinate_clamp": {
+        "fixed_y_offset": -0.0102,
+        "force_stay_at_target": true,
+        "anti_deflection": 1.0,
+        "description": "Ép tâm ghim chết tại tọa độ Y của đầu, triệt tiêu mọi lực kéo lệch hoặc độ trôi"
+      }
+    },
+    "dynamic_tracking_engine": {
+      "frame_perfect_sync": {
+        "prediction_buffer": 1,
+        "velocity_compensation": "REAL_TIME",
+        "description": "Dự đoán và bám đuổi tọa độ đầu mục tiêu theo từng khung hình, không có độ trễ"
+      },
+      "inertia_kill": {
+        "zero_momentum_on_target": true,
+        "overshoot_suppression": "MAXIMUM",
+        "description": "Phanh điện tử: Triệt tiêu 100% quán tính khi tâm chạm vùng đầu để không bị lố"
+      }
+    },
+    "stability_integrity_override": {
+      "recoil_nullifier": {
+        "vertical_recoil": 0.0,
+        "horizontal_recoil": 0.0,
+        "visual_shake_removal": true
+      },
+      "bullet_path_control": {
+        "AimShootSpreadDir": 0,
+        "DeviationBase": 0.0,
+        "UseShootVerifyEx": false,
+        "description": "Đạn bay thẳng tuyệt đối vào điểm đã khóa, bỏ qua mọi kiểm tra logic từ server"
+      }
+    },
+    "stickiness_retention": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartCoff": 99.9,
+      "magnetic_field_radius": "INFINITE",
+      "hold_lock_while_firing": true
+    }
+  },
+  "system_status": {
+    "lock_strength": "EXTREME",
+    "priority_level": "FORCED_CLIENT_OVERWRITE",
+    "collision_model": "VERTEX_SNAP_06"
+  },
+
   "instant_drag_to_head_snap": {
     "quick_trigger_monitor": {
       "detection_event": "on_touch_drag_up",
