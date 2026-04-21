@@ -1,6 +1,58 @@
 
 {
-  
+ 
+  "absolute_head_priority_system": {
+    "hitbox_redefinition": {
+      "ClientAimPart": "HEAD",
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartHeadBoundBoxExtent": 999.9,
+      "ClientHitPartBodyBoundBoxExtent": 0.0,
+      "description": "Vô hiệu hóa hoàn toàn các vùng va chạm khác, biến 'Đầu' thành điểm nhận sát thương duy nhất."
+    },
+    "dynamic_vector_lock": {
+      "lock_target": {
+        "bone_index": 6,
+        "offset_y": -0.0102,
+        "coordinate_space": "world_relative"
+      },
+      "snapping_mechanics": {
+        "snap_speed": "instant",
+        "snap_precision": "sub_pixel",
+        "fov_priority_zone": 360.0,
+        "description": "Tự động nhảy tâm đến tọa độ đầu trong 0.001s ngay khi mục tiêu xuất hiện."
+      }
+    },
+    "motion_stability_control": {
+      "inertia_cancellation": {
+        "stop_at_target": true,
+        "overshoot_protection": 1.0,
+        "velocity_sync": "1:1",
+        "description": "Triệt tiêu quán tính, đảm bảo tâm dừng khựng lại ngay tại đỉnh đầu mà không bị lệch."
+      },
+      "recoil_nullifier": {
+        "vertical_recoil": 0.0,
+        "horizontal_recoil": 0.0,
+        "visual_shake": false,
+        "description": "Loại bỏ hoàn toàn độ giật để giữ tâm đứng yên trong suốt quá trình xả đạn."
+      }
+    },
+    "client_integrity_override": {
+      "UseShootVerifyEx": false,
+      "ClientHeadshotJudgement": "100%",
+      "ClientBulletHitPartJudgment": "HEAD",
+      "ClientAimAssistJudgment": "Max_Strength",
+      "description": "Ép Client gửi gói tin 'Headshot' về Server bất kể quỹ đạo đạn thực tế."
+    },
+    "sustained_lock_logic": {
+      "while_firing": "maintain_hard_lock",
+      "while_moving": "predictive_tracking",
+      "on_target_loss": "instant_reacquisition",
+      "description": "Duy trì khóa tâm liên tục ngay cả khi cả người chơi và đối thủ đều di chuyển nhanh."
+    }
+  },
+  "priority_level": "ABSOLUTE_HEAD_ONLY",
+  "system_status": "CALIBRATED_PRECISION_MAX"
+} 
   "precision_head_clamp_v15": {
     "anti_overshoot_mechanics": {
       "pixel_perfect_braking": {
