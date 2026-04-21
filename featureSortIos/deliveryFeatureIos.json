@@ -1,5 +1,55 @@
 {
   
+  "main_camera_transform_engine": {
+    "view_matrix_manipulator": {
+      "camera_origin_offset": "0x320",
+      "rotation_sync_mode": "REAL_TIME_WORLD_TO_SCREEN",
+      "field_of_view_anchor": "LOCKED_AT_TARGET_HEAD",
+      "description": "Can thiệp trực tiếp vào Transform của Camera để ép góc nhìn (ViewAngle) luôn trùng với Bone_06"
+    },
+    "spatial_coordinate_sync": {
+      "target_acquisition": {
+        "world_position_source": "HeadTF_0x2e5a7b4",
+        "transformation_matrix": "INTERNAL_GET_POSITION",
+        "update_tick": "0.0001ms"
+      },
+      "camera_rotation_lock": {
+        "pitch_lock_limit": -0.0102,
+        "yaw_lock_mode": "DYNAMIC_CENTERING",
+        "roll_stabilization": "MAXIMUM",
+        "description": "Khóa chặt trục Pitch (dọc) tại tọa độ đầu và tự động căn giữa trục Yaw (ngang)"
+      }
+    },
+    "interpolation_bypass": {
+      "snap_type": "HARD_COORDINATE_INJECTION",
+      "smoothing_factor": 0.0,
+      "inertia_nullification": true,
+      "description": "Bỏ qua mọi bước làm mượt của Game Engine; Camera nhảy ngay lập tức tới mục tiêu (Zero Latency)"
+    },
+    "firing_state_synchronizer": {
+      "on_is_firing": {
+        "force_camera_alignment": true,
+        "recoil_compensation_mode": "MATRIX_OVERWRITE",
+        "shake_removal_strength": 1.0
+      },
+      "on_is_sighting": {
+        "zoom_fov_compensation": "AUTO_RECALIBRATE",
+        "pixel_perfect_anchor": true
+      }
+    },
+    "client_integrity_override": {
+      "GetForward": "0x8a88b1c",
+      "Camera_main": "0x6a64c64",
+      "Transform_INTERNAL_SetPosition": "0x6bc252c",
+      "description": "Sử dụng các hàm hệ thống để ép Camera đứng yên tại điểm va chạm đầu"
+    }
+  },
+  "operational_mode": {
+    "camera_priority": "FORCED_OVERWRITE",
+    "tracking_precision": "SUB_ATOMIC_PIXEL",
+    "status": "CAMERA_LOCKED_ON_HEAD"
+  },
+
   "ultra_hard_lock_client_v20": {
     "absolute_hitbox_remapping": {
       "ClientAimPart": "HEAD",
