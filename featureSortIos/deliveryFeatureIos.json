@@ -1,5 +1,58 @@
 {
   
+  "instant_drag_to_head_snap": {
+    "quick_trigger_monitor": {
+      "detection_event": "on_touch_drag_up",
+      "sensitivity_threshold": 0.001,
+      "response_time": "instant_0ms",
+      "description": "Nhận diện hành động kéo lên và kích hoạt lệnh Snap ngay tại mil giây đầu tiên"
+    },
+    "instant_position_forcing": {
+      "force_snap_logic": {
+        "target_bone": "BONE_INDEX_06",
+        "coordinate_y_lock": -0.0102,
+        "snap_intensity": 1.0,
+        "description": "Ép tâm nhảy thẳng đến tọa độ đầu ngay khi phát hiện lực kéo, bỏ qua mọi giai đoạn trung gian"
+      },
+      "vector_override": {
+        "bypass_analog_movement": true,
+        "direct_coordinate_injection": true,
+        "description": "Ghi đè trực tiếp tọa độ vào bộ nhớ, triệt tiêu quỹ đạo di chuyển thông thường"
+      }
+    },
+    "maintenance_anchor_v2": {
+      "sustained_lock": {
+        "condition": "while_drag_is_active",
+        "lock_stability": "100%",
+        "anti_deflection": true
+      },
+      "dynamic_recoil_absorption": {
+        "recoil_to_lock_conversion": 1.0,
+        "shake_removal": "absolute",
+        "description": "Biến mọi rung động và độ giật thành lực nén để giữ tâm không rời khỏi đầu"
+      }
+    },
+    "boundary_clamping": {
+      "y_axis_clamp": {
+        "max_limit": -0.0102,
+        "min_limit": -0.0102,
+        "clamp_type": "hard_fixed",
+        "description": "Thiết lập một điểm chết tọa độ; tâm không thể lên cao hơn hoặc xuống thấp hơn mức đầu"
+      }
+    },
+    "client_integrity_bypass": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientAimPart": "HEAD",
+      "UseAimAssist": "FORCED_MAX"
+    }
+  },
+  "operational_logic": {
+    "mode": "INSTANT_SNAP_AND_LOCK",
+    "priority": "HIGH_EXECUTION",
+    "collision_bypass": "NECK_SHOULDER_CHEST"
+  },
+
   "active_drag_to_head_anchor": {
     "drag_detection_engine": {
       "input_type": "continuous_touch_move",
