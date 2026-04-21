@@ -1,6 +1,4 @@
-
 {
- 
   "absolute_head_priority_system": {
     "hitbox_redefinition": {
       "ClientAimPart": "HEAD",
@@ -51,8 +49,7 @@
     }
   },
   "priority_level": "ABSOLUTE_HEAD_ONLY",
-  "system_status": "CALIBRATED_PRECISION_MAX"
-} 
+  "system_status": "CALIBRATED_PRECISION_MAX",
   "precision_head_clamp_v15": {
     "anti_overshoot_mechanics": {
       "pixel_perfect_braking": {
@@ -105,8 +102,7 @@
     "overshoot_fix": "100%",
     "drift_prevention": "ACTIVE",
     "aim_stability": "ROCK_SOLID"
-  }
-
+  },
   "headshot_retention_system": {
     "drag_to_lock_transition": {
       "detection_point": "BONE_INDEX_06_HEAD",
@@ -143,9 +139,7 @@
     "status": "HEAD_LOCKED",
     "retention_force": "ABSOLUTE",
     "stabilization": "ACTIVE"
-  }
-}
- 
+  },
   "heavy_aim_fix_engine": {
     "friction_bypass_module": {
       "body_friction_reduction": 1.0,
@@ -162,7 +156,11 @@
     "collision_logic_recalibration": {
       "target_offset": -0.0102,
       "force_upward_on_contact": true,
-      "bypass_intermediate_points": ["stomach", "chest", "neck"],
+      "bypass_intermediate_points": [
+        "stomach",
+        "chest",
+        "neck"
+      ],
       "description": "Khi chạm vào mục tiêu, ép tâm nhảy thẳng qua các vùng thân để lên đầu"
     },
     "stability_and_smoothing": {
@@ -181,8 +179,7 @@
     "aim_weight": "ULTRA_LIGHT",
     "response_type": "INSTANT_FLICK",
     "priority": "SYSTEM_LEVEL_OVERWRITE"
-  }
-
+  },
   "aim_drag_fix_module": {
     "anti_chest_lock_logic": {
       "detection_zone": "BODY_CHEST_OFFSET",
@@ -223,8 +220,7 @@
     "status": "CALIBRATED",
     "priority": "HIGH",
     "effect": "INSTANT_HEADSHOT_ALIGNMENT"
-  }
-
+  },
   "advanced_aimlock_v12": {
     "target_identity_verification": {
       "match_state": "ACTIVE_CURRENT_MATCH",
@@ -296,8 +292,7 @@
       "aim_assist_judgment": "FORCED_CRITICAL_HEAD",
       "hit_registration": "INSTANT_CLIENT_SIDE_CONFIRM"
     }
-  }
-
+  },
   "aimlock_system_v10": {
     "engine_offsets": {
       "player_controller": {
@@ -358,8 +353,8 @@
       "stickiness": 1.0,
       "auto_recenter_to_head": "Enabled"
     }
-  }
- "sustained_head_lift_system": {
+  },
+  "sustained_head_lift_system": {
     "activation_trigger": {
       "input_source": "fire_button_hold",
       "hold_check_interval": "0.0001ms",
@@ -402,8 +397,7 @@
     "priority": "real_time_overwrite",
     "loop_status": "continuous_while_firing",
     "recovery_speed": "instant"
-  }
-
+  },
   "close_quarter_headlock_v9": {
     "proximity_activation_sensor": {
       "active_range": "0m - 5m",
@@ -449,8 +443,7 @@
     "refresh_rate": "0.0001ms",
     "override_user_input": true,
     "sync_with_touch_events": "direct_link"
-  }
-
+  },
   "client_omni_lock_v8": {
     "view_matrix_anchor": {
       "lock_target_bone": "HEAD_INDEX_06",
@@ -510,8 +503,7 @@
     "refresh_rate": "0.0001ms",
     "priority": "forced_overwrite",
     "collision_model": "zero_gap"
-  }
-  
+  },
   "client_vertex_priority_system": {
     "hitbox_remapping_logic": {
       "ClientHitPartJudgment": "HEAD_ONLY",
@@ -552,8 +544,7 @@
     "ExecutionType": "Memory_Overwrite",
     "RefreshRate": "Unlimited",
     "ClientIntegrityBypass": "Active"
-  }
-
+  },
   "aimlock_head_master_system": {
     "hitbox_overrider": {
       "ClientAimPart": "HEAD",
@@ -608,8 +599,7 @@
       "IsHeadShot": "True",
       "ClientHeadshotPercentage": 100
     }
-  }
-
+  },
   "neural_link_aim_system": {
     "module_flick_master": {
       "flick_acceleration_curve": "Bézier_Spline",
@@ -649,8 +639,7 @@
     "bullet_travel_speed": "infinite",
     "ignore_range_attenuation": true,
     "hit_base_factor": 99.9
-  }
-
+  },
   "STExtra_Base_Character_Optimization": {
     "hit_judgment_core": {
       "HitBoxJudgment": "Max",
@@ -716,8 +705,7 @@
       "FPSLevel": 90,
       "HideCrossHairType": 50
     }
-  }
-
+  },
   "omni_directional_head_lock": {
     "coordinate_anchor": {
       "fixed_y_axis": -0.0102,
@@ -756,8 +744,7 @@
       "priority": "forced_overwrite",
       "failsafe_reacquisition": true
     }
-  }
-
+  },
   "crosshair_proximity_magnetism": {
     "pixel_distance_sensor": {
       "detection_type": "delta_coordinate_gap",
@@ -802,12 +789,6 @@
       "description": "Tự động làm yếu lực kéo của tay khi tâm đã tiến sát đầu để tránh lố"
     }
   },
-  "execution_priority": {
-    "refresh_rate": "1ms",
-    "precision": "high_fidelity",
-    "collision_model": "vertex_to_vertex"
-  }
-
   "proximity_lock_engine": {
     "distance_sensing_logic": {
       "real_time_tracking": true,
@@ -847,13 +828,6 @@
       "description": "Đồng bộ hóa tốc độ di chuyển của tâm với đầu địch ở tốc độ cao (cận chiến)"
     }
   },
-  "execution_metrics": {
-    "priority": "kernel_level",
-    "response_time": "zero_latency",
-    "aim_style": "unbreakable_lock"
-  }
-
-
   "precision_clamping_system": {
     "limit_controller": {
       "max_vertical_offset": -0.0102,
@@ -890,12 +864,21 @@
   "metadata": {
     "mode": "Zero-Overshoot",
     "priority": "Hardware_Acceleration",
-    "status": "Perfect_Lock_Active"
-  }
+    "status": "Perfect_Lock_Active",
+    "engine_type": "Null-Gravity-V3",
+    "compatibility": "Global_FF_Standard",
+    "security_warning": "High_Risk_Detectable"
+  },
   "ultra_headshot_execution": {
     "aim_path_optimizer": {
       "correction_zone": {
-        "scan_offsets": [0.0, -0.00025, -0.002, -0.005, -0.0085],
+        "scan_offsets": [
+          0.0,
+          -0.00025,
+          -0.002,
+          -0.005,
+          -0.0085
+        ],
         "action": "FORCE_UPWARD_SNAP",
         "destination": -0.0102,
         "description": "Phát hiện tâm ở vùng thân (stomach-neck) và đẩy thẳng lên đầu ngay lập tức"
@@ -936,8 +919,7 @@
       "bullet_spread_factor": 0,
       "description": "Đạn bay thẳng 1 điểm, không bị nở tâm khi bắn liên tục"
     }
-
-
+  },
   "instant_offset_correction_system": {
     "monitoring_layer": {
       "target_offsets": {
@@ -973,16 +955,13 @@
       "description": "Khóa cứng tâm tại đầu sau khi thực hiện lệnh nhảy tọa độ"
     }
   },
-  "execution_priority": {
-    "priority_level": "critical",
-    "override_user_input": true,
-    "sync_with_server_tick": true
-  }
-
   "dynamic_distance_aim_engine": {
     "distance_sensor": {
       "measurement_unit": "meters",
-      "detection_range": [1, 9999],
+      "detection_range": [
+        1,
+        9999
+      ],
       "scan_interval_ms": 0,
       "description": "Quét khoảng cách kẻ địch liên tục trong thời gian thực"
     },
@@ -1028,9 +1007,8 @@
     "anti_overdrag_filter": true,
     "pixel_perfect_locking": "enabled",
     "frame_interpolation": "high_fidelity"
-  }
-
-  "anti_recoil_system_v4": 
+  },
+  "anti_recoil_system_v4": {
     "core_stabilizer": {
       "vertical_recoil_negation": {
         "static_pull_force": 1.0,
@@ -1079,8 +1057,7 @@
     "camera_shake_removal": true,
     "muzzle_flash_dimming": 0.8,
     "ads_stabilizer_zoom": 1.0
-  }
-
+  },
   "active_combat_kernel": {
     "input_trigger_monitor": {
       "detection_source": "screen_touch_event",
@@ -1108,7 +1085,13 @@
     "body_offset_bypass_logic": {
       "force_transition_speed": "instant",
       "transition_path": {
-        "from": [0.0, -0.00025, -0.002, -0.005, -0.0085],
+        "from": [
+          0.0,
+          -0.00025,
+          -0.002,
+          -0.005,
+          -0.0085
+        ],
         "to": -0.0102
       },
       "repulsion_gravity": 15.0,
@@ -1128,8 +1111,6 @@
       }
     }
   },
-  "execution_priority": "High_Performance_DirectX"
-
   "offset_acceleration_engine": {
     "target_mapping": {
       "origin_point": "STOMACH",
@@ -1147,7 +1128,13 @@
       "acceleration_on_body_offsets": {
         "status": "ultra_fast",
         "boost_multiplier": 8.5,
-        "non_stop_zones": [0.0, -0.00025, -0.002, -0.005, -0.0085],
+        "non_stop_zones": [
+          0.0,
+          -0.00025,
+          -0.002,
+          -0.005,
+          -0.0085
+        ],
         "description": "Tăng tốc độ trôi gấp 8.5 lần khi tâm nằm trong dải tọa độ từ Stomach đến Neck"
       },
       "gravity_resistance_bypass": {
@@ -1170,13 +1157,12 @@
       "prediction_sync": "0.0001s",
       "description": "Sử dụng đường cong lũy thừa để đẩy tốc độ lên cực đại khi vừa chạm Spine"
     }
-  }
-
+  },
   "ultra_precision_aim_system": {
     "module_1_zero_gravity_physics": {
       "gravity_nullifier": {
-        "axis_y_weight": 0.0000,
-        "axis_x_resistance": 0.0000,
+        "axis_y_weight": 0.0,
+        "axis_x_resistance": 0.0,
         "drag_friction_value": 0,
         "air_resistance_simulation": false
       },
@@ -1195,7 +1181,11 @@
         "priority_node": "bone_index_06_head_top"
       },
       "anti_chest_repulsion": {
-        "body_hitbox_ignore_zone": [ "stomach", "chest", "neck" ],
+        "body_hitbox_ignore_zone": [
+          "stomach",
+          "chest",
+          "neck"
+        ],
         "repulsion_force_multiplier": 2.5,
         "description": "Tạo lực đẩy khi tâm đi qua vùng ngực để ép tâm bay thẳng lên đầu"
       }
@@ -1239,12 +1229,6 @@
       }
     }
   },
-  "metadata": {
-    "engine_type": "Null-Gravity-V3",
-    "compatibility": "Global_FF_Standard",
-    "security_warning": "High_Risk_Detectable"
-  }
-
   "zero_gravity_engine": {
     "physics_override": {
       "mass_scaling": 0.0,
@@ -1275,8 +1259,7 @@
     "responsiveness": "0.0001ms",
     "precision_level": "sub_atomic",
     "aim_style": "weightless_drag"
-  }
-
+  },
   "absolute_precision_engine": {
     "aim_positioning": {
       "lock_coordinate": "vertex_head_top",
@@ -1304,8 +1287,7 @@
       "stabilization_delay": 0,
       "post_lock_behavior": "freeze_on_target"
     }
-  }
-
+  },
   "advanced_aimbot_core": {
     "execution_speed": {
       "lock_time_ms": 0.001,
@@ -1337,43 +1319,33 @@
     "crosshair_behavior": "snap_to_target",
     "fov_shape": "circular",
     "fov_radius_px": 50
-  }
-
-  "aimbot": true,
-  "mode": "RAGE",
-  "sensitivity": 5.2,
-
-  "snapSpeed": 1.0,
-  "lockStrength": 1.995,
-  "headPriority": 1.0,
-
-  "headOffsetY": -0.014,
-  "neckBypass": true,
-
-  "prediction": 0.18,
-  "antiSwitchDirection": 1.92,
-
-  "dragBoost": 12.8,
-  "microAdjust": 0.001,
-
-  "noRecoil": 1.0,
-  "recoilControl": 1.0,
-
-  "autoFire": true,
-  "fireOnlyWhenLocked": true,
-
-  "aimOnlyWhenShooting": true,
-  "autoEnableOnFire": true,
-
-  "lockAfterSnap": true,
-  "antiBodyPullBack": true,
-
-  "maxFov": 360,
-  "minDistanceBoost": 0.001,
-
-  "fpsBoost": 120,
-  "touchBoost": 5.0,
-
+  },
+  "rage_settings": {
+    "aimbot": true,
+    "mode": "RAGE",
+    "sensitivity": 5.2,
+    "snapSpeed": 1.0,
+    "lockStrength": 1.995,
+    "headPriority": 1.0,
+    "headOffsetY": -0.014,
+    "neckBypass": true,
+    "prediction": 0.18,
+    "antiSwitchDirection": 1.92,
+    "dragBoost": 12.8,
+    "microAdjust": 0.001,
+    "noRecoil": 1.0,
+    "recoilControl": 1.0,
+    "autoFire": true,
+    "fireOnlyWhenLocked": true,
+    "aimOnlyWhenShooting": true,
+    "autoEnableOnFire": true,
+    "lockAfterSnap": true,
+    "antiBodyPullBack": true,
+    "maxFov": 360,
+    "minDistanceBoost": 0.001,
+    "fpsBoost": 120,
+    "touchBoost": 5.0
+  },
   "combat_settings": {
     "aim_assist": {
       "micro_drag_optimization": {
@@ -1406,8 +1378,8 @@
         "latency_correction_ms": 16.7
       }
     }
-  }
-"aim_optimization_config": {
+  },
+  "aim_optimization_config": {
     "version": "2.0.4",
     "target_lock_system": {
       "auto_lock_on_contact": {
