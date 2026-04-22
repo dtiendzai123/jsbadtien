@@ -1,5 +1,50 @@
 {
   
+  "cdn_vertical_head_surge": {
+    "hitbox_friction_nullifier": {
+      "zones": ["NECK", "CHEST", "SHOULDERS"],
+      "friction_coefficient": 0.0,
+      "repulsion_multiplier": 1.5,
+      "description": "Xoá bỏ hoàn toàn ma trận ma sát tại cổ và ngực; tạo lực đẩy lên khi tâm đi ngang qua"
+    },
+    "auto_surge_mechanism": {
+      "trigger_event": "ON_TOUCH_DRAG_UP",
+      "minimum_surge_force": "2.5x_DEFAULT",
+      "target_coordinate_y": -0.0102,
+      "surge_velocity": "INSTANT_SNAP",
+      "description": "Khi phát hiện kéo tâm, hệ thống tự động nhân 2.5 lần lực kéo để vượt qua vùng thân"
+    },
+    "coordinate_clamping_logic": {
+      "clamp_axis": "Y_AXIS_ONLY",
+      "hard_lock_point": -0.0102,
+      "snap_retention": true,
+      "description": "Kẹp cứng tọa độ dọc tại đỉnh đầu; ngăn tâm bị rơi ngược xuống cổ khi sấy súng"
+    },
+    "adhesion_recalibration": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartAreaHead": 999.9,
+      "ClientHitPartAreaBody": 0.0001,
+      "description": "Thu nhỏ tối đa vùng hít ở thân và mở rộng vùng hít ở đầu để tối ưu hóa việc ép đạn"
+    },
+    "system_functions_sync": {
+      "position_get": "Transform_INTERNAL_GetPosition",
+      "position_set": "Transform_INTERNAL_SetPosition",
+      "aim_vector": "GetForward_Sync",
+      "description": "Đồng bộ hóa các hàm hệ thống để duy trì vị trí khóa bất chấp chuyển động của địch"
+    },
+    "integrity_bypass": {
+      "UseAimAssist": "FORCED_HEAD_ONLY",
+      "ClientAimPart": "HEAD",
+      "recoil_upward_bias": 1.0
+    }
+  },
+  "deployment_parameters": {
+    "priority": "CRITICAL_OVERWRITE",
+    "status": "ANTI_CHEST_STICK_ENABLED",
+    "precision": "100_PERCENT_HEAD"
+  },
+
   "cdn_head_lock_configuration": {
     "data_delivery_optimization": {
       "asset_priority": "HEAD_TRANSFORM_GEOMETRY",
