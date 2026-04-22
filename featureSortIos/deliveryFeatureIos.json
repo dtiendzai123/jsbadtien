@@ -4,12 +4,12 @@
     "hitbox_friction_nullifier": {
       "zones": ["NECK", "CHEST", "SHOULDERS"],
       "friction_coefficient": 0.0,
-      "repulsion_multiplier": 1.5,
+      "repulsion_multiplier": 5.5,
       "description": "Xoá bỏ hoàn toàn ma trận ma sát tại cổ và ngực; tạo lực đẩy lên khi tâm đi ngang qua"
     },
     "auto_surge_mechanism": {
       "trigger_event": "ON_TOUCH_DRAG_UP",
-      "minimum_surge_force": "2.5x_DEFAULT",
+      "minimum_surge_force": "10.5x_DEFAULT",
       "target_coordinate_y": -0.0102,
       "surge_velocity": "INSTANT_SNAP",
       "description": "Khi phát hiện kéo tâm, hệ thống tự động nhân 2.5 lần lực kéo để vượt qua vùng thân"
