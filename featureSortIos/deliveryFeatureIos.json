@@ -1,5 +1,50 @@
 {
   
+  "cdn_head_lock_configuration": {
+    "data_delivery_optimization": {
+      "asset_priority": "HEAD_TRANSFORM_GEOMETRY",
+      "sync_rate": "MAX_0.0001ms",
+      "buffer_bypass": true,
+      "description": "Tăng tốc độ truyền tải tọa độ xương đầu để đảm bảo tâm luôn bám sát theo thời gian thực"
+    },
+    "client_forced_alignment": {
+      "bone_locking_protocol": {
+        "primary_target": "BONE_INDEX_06",
+        "lock_force": 1.0,
+        "magnetic_adhesion": 100.0,
+        "description": "Ép thực thể tâm ngắm phải dính chặt vào đỉnh đầu bất kể độ trễ mạng (Ping)"
+      },
+      "coordinate_correction": {
+        "internal_set_pos": "ACTIVE",
+        "fixed_y_axis": -0.0102,
+        "auto_snap": "INSTANT_ON_FIRE"
+      }
+    },
+    "hitbox_geometry_override": {
+      "head_hitbox_expansion": 999.9,
+      "body_hitbox_suppression": 0.0,
+      "neck_filter_bypass": true,
+      "description": "Mở rộng vùng nhận diện Headshot ra toàn bộ không gian xung quanh mục tiêu"
+    },
+    "advanced_aim_assist_cdn": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientAimPart": "HEAD",
+      "AimShootSpreadDir": 0,
+      "UseAimAssist": "MAX_POWER"
+    },
+    "stability_control": {
+      "recoil_negation": 1.0,
+      "shake_nullification": true,
+      "view_matrix_stabilizer": "LOCKED"
+    }
+  },
+  "deployment_status": {
+    "status": "HARD_LOCK_ACTIVE",
+    "precision_level": "ABSOLUTE_HEADSHOT",
+    "integrity": "CLIENT_SIDE_OVERWRITE"
+  },
+
   "client_magic_bullet_injection": {
     "projectile_logic_override": {
       "bullet_path_redirection": {
