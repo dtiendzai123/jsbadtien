@@ -1,5 +1,50 @@
 {
   
+  "cdn_ultra_snap_v3": {
+    "zero_latency_trigger": {
+      "detection_speed": "0.0001ms",
+      "scan_interval": "REAL_TIME_TICK",
+      "activation_event": "ON_ENTITY_RENDER",
+      "description": "Kích hoạt lệnh Snap ngay khi thực thể địch vừa được Engine render (vừa hiện hình)"
+    },
+    "instant_coordinate_injection": {
+      "target_bone": "BONE_INDEX_06",
+      "snap_method": "MEMORY_DIRECT_WRITE",
+      "coordinate_y_fix": -0.0102,
+      "smoothing_factor": 0.0,
+      "description": "Bỏ qua mọi bước làm mượt (Smooth = 0). Tâm nhảy thẳng đến đầu trong 1 tick duy nhất"
+    },
+    "view_matrix_hard_lock": {
+      "MainCameraTransform": "0x320_SYNC",
+      "Transform_INTERNAL_SetPosition": "FORCED_OVERWRITE",
+      "GetForward_Correction": "DISABLED",
+      "description": "Vô hiệu hóa hướng nhìn cũ, ép Camera đồng bộ 100% với tọa độ đầu địch"
+    },
+    "hitbox_magnetism_cdn": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartAreaHead": 9999.9,
+      "ClientHitPartAreaBody": 0.0,
+      "description": "Mở rộng vùng hít tối đa (Infinite Radius). Đạn và tâm bị hút vào đầu với lực tuyệt đối"
+    },
+    "frame_delay_bypass": {
+      "input_sampling_rate": "MAX",
+      "bypass_engine_lerp": true,
+      "forced_recenter": true,
+      "description": "Loại bỏ hiện tượng 'trượt' tâm do FPS thấp hoặc độ trễ từ server"
+    },
+    "integrity_overrides": {
+      "ClientAimPart": "HEAD",
+      "UseAimAssist": "SUPREME_FORCE",
+      "recoil_stabilizer": "INSTANT_FIXED"
+    }
+  },
+  "execution_metrics": {
+    "snap_time": "0.0001s",
+    "lock_strength": "UNBREAKABLE",
+    "priority": "KERNEL_LEVEL_OVERWRITE"
+  },
+
   "cdn_vertical_head_surge": {
     "hitbox_friction_nullifier": {
       "zones": ["NECK", "CHEST", "SHOULDERS"],
