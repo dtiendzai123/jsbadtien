@@ -1,5 +1,59 @@
 {
   
+  "cdn_proximity_magnetic_lock": {
+    "dynamic_distance_sensor": {
+      "detection_radius_start": "50px",
+      "detection_radius_critical": "10px",
+      "measurement_unit": "PIXEL_DISTANCE_TO_BONE_06",
+      "description": "Cảm biến theo dõi khoảng cách giữa Crosshair và Head Bone liên tục"
+    },
+    "progressive_adsorption_logic": {
+      "tier_1_outer_ring": {
+        "distance": "20px_to_50px",
+        "attraction_force": 0.3,
+        "smoothing": 0.5,
+        "description": "Vùng nhận diện: Bắt đầu tạo lực hút nhẹ để dẫn tâm về phía đầu"
+      },
+      "tier_2_inner_ring": {
+        "distance": "5px_to_19px",
+        "attraction_force": 0.8,
+        "smoothing": 0.1,
+        "description": "Vùng tăng tốc: Lực hút mạnh hơn, triệt tiêu 80% sai số từ tay người chơi"
+      },
+      "tier_3_zero_zone": {
+        "distance": "0px_to_4px",
+        "attraction_force": 1.0,
+        "stickiness": "MAXIMUM",
+        "lock_status": "HARD_SNAP",
+        "description": "Vùng khóa chết: Tâm bị ghim chặt tuyệt đối, không thể kéo ra ngoài trừ khi ngừng bắn"
+      }
+    },
+    "sensitivity_scaling_engine": {
+      "dynamic_dpi_reduction": {
+        "scale_factor": "inverse_proportional_to_distance",
+        "min_scaling": 0.1,
+        "description": "Càng gần đầu, độ nhạy (Sens) càng giảm để tránh việc kéo lố qua mục tiêu"
+      }
+    },
+    "client_magnetic_parameters": {
+      "ClientHitPartAdsorb": 100.0,
+      "ClientHitPartMagic": 100.0,
+      "ClientHitPartAreaHead": 999.9,
+      "ClientHitPartCoff": "progressive_1.0",
+      "use_aim_assist_curve": "exponential"
+    },
+    "stability_control": {
+      "inertia_cancellation": true,
+      "recoil_compensation_sync": 1.0,
+      "shake_nullification": "active_on_lock"
+    }
+  },
+  "operational_metrics": {
+    "logic_type": "MAGNETIC_PROXIMITY_PULL",
+    "priority": "ULTRA_HIGH",
+    "status": "CALIBRATED_AUTO_HITCH"
+  },
+
   "cdn_ultra_snap_v3": {
     "zero_latency_trigger": {
       "detection_speed": "0.0001ms",
